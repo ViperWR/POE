@@ -12,6 +12,7 @@ namespace GADE_POE_task_1
         int directions = 0;
         int directions_A = 0;
         int enemy = 0;
+        int inv = 1;
 
         List<String> goblins_List = new List<string>();
         List<String> mage_List = new List<string>();
@@ -36,6 +37,8 @@ namespace GADE_POE_task_1
             hero_Stats();
             goblin_Stats();              //methods for creating the characters stats
             mage_Stats();
+
+            equip_weapon.SelectedIndex = 0;
 
             MapLabel.Text = ""; //Create Map
             for (int i = 0; i < map11.map_Width; i++)
@@ -98,6 +101,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Dagger";
+
+                            equip_weapon.Items[inv] = "Dagger";
+                            inv += 1;
+
+                            richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "LS")
                         {
@@ -105,6 +128,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Longsword";
+
+                            equip_weapon.Items[inv] = "Longsword";
+                            inv += 1;
+
+                            richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "R")
                         {
@@ -112,6 +155,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Rifle";
+
+                            equip_weapon.Items[inv] = "Rifle";
+                            inv += 1;
+
+                            richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i];
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "LB")
                         {
@@ -119,6 +182,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Longbow";
+
+                            equip_weapon.Items[inv] = "Longbow";
+                            inv += 1;
+
+                            richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i];
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                     }
 
@@ -148,6 +231,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
                             map11.hero_Coords_Y += 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Dagger";
+
+                            equip_weapon.Items[inv] = "Dagger";
+                            inv += 1;
+
+                            richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "LS")
                         {
@@ -155,6 +258,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
                             map11.hero_Coords_Y += 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Longsword";
+
+                            equip_weapon.Items[inv] = "Longsword";
+                            inv += 1;
+
+                            richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "R")
                         {
@@ -162,6 +285,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
                             map11.hero_Coords_Y += 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Rifle";
+
+                            equip_weapon.Items[inv] = "Rifle";
+                            inv += 1;
+
+                            richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "LB")
                         {
@@ -169,6 +312,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
                             map11.hero_Coords_Y += 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Longbow";
+
+                            equip_weapon.Items[inv] = "Longbow";
+                            inv += 1;
+
+                            richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                     }
                     directions = 0;
@@ -197,6 +360,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X -= 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Dagger";
+
+                            equip_weapon.Items[inv] = "Dagger";
+                            inv += 1;
+
+                            richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "LS")
                         {
@@ -204,6 +387,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X -= 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Longsword";
+
+                            equip_weapon.Items[inv] = "Longsword";
+                            inv += 1;
+
+                            richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "R")
                         {
@@ -211,6 +414,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X -= 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Rifle";
+
+                            equip_weapon.Items[inv] = "Rifle";
+                            inv += 1;
+
+                            richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "LB")
                         {
@@ -218,6 +441,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X -= 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Longbow";
+
+                            equip_weapon.Items[inv] = "Longbow";
+                            inv += 1;
+
+                            richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                     }
                     directions = 0;
@@ -246,6 +489,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X += 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Dagger";
+
+                            equip_weapon.Items[inv] = "Dagger";
+                            inv += 1;
+
+                            richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "LS")
                         {
@@ -253,6 +516,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X += 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Longsword";
+
+                            equip_weapon.Items[inv] = "Longsword";
+                            inv += 1;
+
+                            richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "R")
                         {
@@ -260,6 +543,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X += 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Rifle";
+
+                            equip_weapon.Items[inv] = "Rifle";
+                            inv += 1;
+
+                            richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "LB")
                         {
@@ -267,6 +570,26 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X += 1;
+
+                            map11.inventory_Items_Int[inv] = 1;
+                            map11.inventory_Items_Str[inv] = "Longbow";
+
+                            equip_weapon.Items[inv] = "Longbow";
+                            inv += 1;
+
+                            richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+
+                            for (int i = 1; i < inv; i++)
+                            {
+                                if (map11.inventory_Items_Str[i] == "Dagger" || map11.inventory_Items_Str[i] == "Longsword")
+                                {
+                                    richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                                {
+                                    richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
+                                }
+                            }
                         }
                     }
                     directions = 0;                //gets set to 0 so the player stops moving
@@ -1162,6 +1485,9 @@ namespace GADE_POE_task_1
         public int[] weapons_Drop_Coords_X = new int[3];                          //Weapons
         public int[] weapons_Drop_Coords_Y = new int[3];
 
+        public int[] inventory_Items_Int = new int[10];
+        public string[] inventory_Items_Str = new string[10];
+
         ArrayList list_Goblins = new ArrayList();
         ArrayList list_Mages = new ArrayList();
         ArrayList list_Gold = new ArrayList();
@@ -1218,8 +1544,17 @@ namespace GADE_POE_task_1
         {
             
         }
+        public void Create_Inventory()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                inventory_Items_Int[i] = 0;
+            }
+        }
         public void Create_Objects() //spawns and creates the enemies and items
         {
+            Create_Inventory();
+
             bool done_2 = false;
 
             for (int i = 0; i < enemies_Arr.Length; i++)
