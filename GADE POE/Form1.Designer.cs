@@ -53,6 +53,7 @@ namespace GADE_POE_task_1
             this.groupBoxWeaponStats = new System.Windows.Forms.GroupBox();
             this.richTextBoxWeaponStats = new System.Windows.Forms.RichTextBox();
             this.groupBoxInventory = new System.Windows.Forms.GroupBox();
+            this.richTextBoxInventoryRanged = new System.Windows.Forms.RichTextBox();
             this.richTextBoxInventoryMelee = new System.Windows.Forms.RichTextBox();
             this.groupBoxShop = new System.Windows.Forms.GroupBox();
             this.groupBoxShopInv = new System.Windows.Forms.GroupBox();
@@ -62,7 +63,6 @@ namespace GADE_POE_task_1
             this.buttonBuy = new System.Windows.Forms.Button();
             this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.richTextBoxInfo = new System.Windows.Forms.RichTextBox();
-            this.richTextBoxInventoryRanged = new System.Windows.Forms.RichTextBox();
             this.groupBoxAttacking.SuspendLayout();
             this.groupBox_Player_Stats.SuspendLayout();
             this.groupBoxWeapon.SuspendLayout();
@@ -244,6 +244,7 @@ namespace GADE_POE_task_1
             this.equip_weapon.Name = "equip_weapon";
             this.equip_weapon.Size = new System.Drawing.Size(121, 23);
             this.equip_weapon.TabIndex = 13;
+            this.equip_weapon.SelectedIndexChanged += new System.EventHandler(this.equip_weapon_SelectedIndexChanged);
             // 
             // labelWeapon
             // 
@@ -295,6 +296,14 @@ namespace GADE_POE_task_1
             this.groupBoxInventory.TabIndex = 16;
             this.groupBoxInventory.TabStop = false;
             this.groupBoxInventory.Text = "Inventory";
+            // 
+            // richTextBoxInventoryRanged
+            // 
+            this.richTextBoxInventoryRanged.Location = new System.Drawing.Point(6, 72);
+            this.richTextBoxInventoryRanged.Name = "richTextBoxInventoryRanged";
+            this.richTextBoxInventoryRanged.Size = new System.Drawing.Size(264, 43);
+            this.richTextBoxInventoryRanged.TabIndex = 4;
+            this.richTextBoxInventoryRanged.Text = "Ranged :";
             // 
             // richTextBoxInventoryMelee
             // 
@@ -381,14 +390,6 @@ namespace GADE_POE_task_1
             this.richTextBoxInfo.Size = new System.Drawing.Size(164, 258);
             this.richTextBoxInfo.TabIndex = 1;
             this.richTextBoxInfo.Text = resources.GetString("richTextBoxInfo.Text");
-            // 
-            // richTextBoxInventoryRanged
-            // 
-            this.richTextBoxInventoryRanged.Location = new System.Drawing.Point(6, 72);
-            this.richTextBoxInventoryRanged.Name = "richTextBoxInventoryRanged";
-            this.richTextBoxInventoryRanged.Size = new System.Drawing.Size(264, 43);
-            this.richTextBoxInventoryRanged.TabIndex = 4;
-            this.richTextBoxInventoryRanged.Text = "Ranged :";
             // 
             // Form1
             // 
