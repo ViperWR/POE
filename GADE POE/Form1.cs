@@ -80,7 +80,7 @@ namespace GADE_POE_task_1
                         move_Enemies();
                         if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == " ")
                         {
-                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " "; //sss
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
                         }
