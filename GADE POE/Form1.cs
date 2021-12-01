@@ -733,7 +733,7 @@ namespace GADE_POE_task_1
                     if (map11.g_Health[enemy - 1] > 0)
                     {
                         map11.g_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Goblin got Hit for 2 " + '\n' + "Goblin HP: " + map11.g_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Goblin got Hit for " + map11.hero_DMG + '\n' + "Goblin HP: " + map11.g_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.g_Health[enemy - 1] <= 0)
                     {
@@ -746,7 +746,7 @@ namespace GADE_POE_task_1
                     if (map11.m_Health[enemy - 1] > 0)
                     {
                         map11.m_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Mage got Hit for 2 " + '\n' + "Mage HP: " + map11.m_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Mage got Hit for " + map11.hero_DMG + '\n' + "Mage HP: " + map11.m_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.m_Health[enemy - 1] <= 0)
                     {
@@ -759,7 +759,7 @@ namespace GADE_POE_task_1
                     if (map11.leader_Health[enemy - 1] > 0)
                     {
                         map11.leader_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Leader got Hit for 2 " + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Leader got Hit for " + map11.hero_DMG + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.leader_Health[enemy - 1] <= 0)
                     {
@@ -779,7 +779,7 @@ namespace GADE_POE_task_1
                     if (map11.g_Health[enemy - 1] > 0)
                     {
                         map11.g_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Goblin got Hit for 2 " + '\n' + "Goblin HP: " + map11.g_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Goblin got Hit for " + map11.hero_DMG + '\n' + "Goblin HP: " + map11.g_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.g_Health[enemy - 1] <= 0)
                     {
@@ -792,7 +792,7 @@ namespace GADE_POE_task_1
                     if (map11.m_Health[enemy - 1] > 0)
                     {
                         map11.m_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Mage got Hit for 2 " + '\n' + "Mage HP: " + map11.m_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Mage got Hit for " + map11.hero_DMG + '\n' + "Mage HP: " + map11.m_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.m_Health[enemy - 1] <= 0)
                     {
@@ -805,7 +805,7 @@ namespace GADE_POE_task_1
                     if (map11.leader_Health[enemy - 1] > 0)
                     {
                         map11.leader_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Leader got Hit for 2 " + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Leader got Hit for " + map11.hero_DMG + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.leader_Health[enemy - 1] <= 0)
                     {
@@ -825,7 +825,7 @@ namespace GADE_POE_task_1
                     if (map11.g_Health[enemy - 1] > 0)
                     {
                         map11.g_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Goblin got Hit for 2 " + '\n' + "Goblin HP: " + map11.g_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Goblin got Hit for " + map11.hero_DMG + '\n' + "Goblin HP: " + map11.g_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.g_Health[enemy - 1] <= 0)
                     {
@@ -838,7 +838,7 @@ namespace GADE_POE_task_1
                     if (map11.m_Health[enemy - 1] > 0)
                     {
                         map11.m_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Mage got Hit for 2 " + '\n' + "Mage HP: " + map11.m_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Mage got Hit for " + map11.hero_DMG + '\n' + "Mage HP: " + map11.m_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.m_Health[enemy - 1] <= 0)
                     {
@@ -851,7 +851,7 @@ namespace GADE_POE_task_1
                     if (map11.leader_Health[enemy - 1] > 0)
                     {
                         map11.leader_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Leader got Hit for 2 " + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Leader got Hit for " + map11.hero_DMG + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.leader_Health[enemy - 1] <= 0)
                     {
@@ -871,7 +871,7 @@ namespace GADE_POE_task_1
                     if (map11.g_Health[enemy - 1] > 0)
                     {
                         map11.g_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Goblin got Hit for 2 " + '\n' + "Goblin HP: " + map11.g_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Goblin got Hit for " + map11.hero_DMG + '\n' + "Goblin HP: " + map11.g_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.g_Health[enemy - 1] <= 0)
                     {
@@ -884,7 +884,7 @@ namespace GADE_POE_task_1
                     if (map11.m_Health[enemy - 1] > 0)
                     {
                         map11.m_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Mage got Hit for 2 " + '\n' + "Mage HP: " + map11.m_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Mage got Hit for " + map11.hero_DMG + '\n' + "Mage HP: " + map11.m_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.m_Health[enemy - 1] <= 0)
                     {
@@ -897,7 +897,7 @@ namespace GADE_POE_task_1
                     if (map11.leader_Health[enemy - 1] > 0)
                     {
                         map11.leader_Health[enemy - 1] -= map11.hero_DMG;
-                        attack_richTextBox.Text = ("Leader got Hit for 2 " + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        attack_richTextBox.Text = ("Leader got Hit for " + map11.hero_DMG + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     if (map11.leader_Health[enemy - 1] <= 0)
                     {
