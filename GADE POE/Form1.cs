@@ -68,10 +68,53 @@ namespace GADE_POE_task_1
                 MapLabel.Text = MapLabel.Text + "\n";
             }
         }
+        public void weapon_Stats_Update()
+        {
+            Item item11 = new Item();
+
+
+            if (equip_weapon.Text == "Dagger")
+            {
+                map11.hero_DMG = item11.dagger_DMG;
+                richTextBoxWeaponStats.Text = "Damage : " + Convert.ToString(map11.hero_DMG) + "\n" +
+                    "Range : " + 1 + "\n" +
+                    "Durability : " + item11.dagger_Durability;
+            }
+            else if (equip_weapon.Text == "Longsword")
+            {
+                map11.hero_DMG = item11.longsword_DMG;
+                richTextBoxWeaponStats.Text = "Damage : " + Convert.ToString(map11.hero_DMG) + "\n" +
+                    "Range : " + 1 + "\n" +
+                    "Durability : " + item11.longsword_Durability;
+            }
+            else if (equip_weapon.Text == "Rifle")
+            {
+                map11.hero_DMG = item11.rifle_DMG;
+                richTextBoxWeaponStats.Text = "Damage : " + Convert.ToString(map11.hero_DMG) + "\n" +
+                    "Range : " + item11.rifle_Range + "\n" +
+                    "Durability : " + item11.rifle_Durability;
+            }
+            else if (equip_weapon.Text == "Longbow")
+            {
+                map11.hero_DMG = item11.longbow_DMG;
+                richTextBoxWeaponStats.Text = "Damage : " + Convert.ToString(map11.hero_DMG) + "\n" +
+                    "Range : " + item11.longbow_Range + "\n" +
+                    "Durability : " + item11.longbow_Durability;
+            }
+            else if (equip_weapon.Text == "BareHands")
+            {
+                map11.hero_DMG = 2;
+                richTextBoxWeaponStats.Text = "Damage : " + Convert.ToString(map11.hero_DMG) + "\n" +
+                    "Range : " + 1 + "\n" +
+                    "Durability : " + "∞";
+            }
+            update_P_Stats();
+        }
         public void update_P_Stats()            //updates player ui stats
         {
-            richTextBox_Player_Stats.Text = "Player Stats:" + "\n HP: " + map11.hero_HP + "/" + map11.hero_Max_HP + "               Gold : " + map11.gold + "\n Damage: 2" + "\n [" + map11.hero_Coords_X + "," + map11.hero_Coords_Y + "]";
+            richTextBox_Player_Stats.Text = "Player Stats:" + "\n HP: " + map11.hero_HP + "/" + map11.hero_Max_HP + "               Gold : " + map11.gold + "\n Damage: " + map11.hero_DMG + "\n [" + map11.hero_Coords_X + "," + map11.hero_Coords_Y + "]";
         }
+
         private void moveHero()              //moves hero
         {
             check_Lost();
@@ -672,7 +715,7 @@ namespace GADE_POE_task_1
                 {
                     enemy = 1;
                 }
-                if (map11.leaders_Coords_X[1] == map11.hero_Coords_X & map11.leaders_Coords_Y[0] == map11.hero_Coords_Y)
+                if (map11.leaders_Coords_X[1] == map11.hero_Coords_X & map11.leaders_Coords_Y[1] == map11.hero_Coords_Y)
                 {
                     enemy = 2;
                 }
@@ -958,6 +1001,11 @@ namespace GADE_POE_task_1
                         map11.hero_HP -= map11.mage_DMG;
                         attack_richTextBox.Text = ("Mage Hit for 5 " + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
+                    if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "L")
+                    {
+                        map11.hero_HP -= map11.leader_DMG;
+                        attack_richTextBox.Text = ("Leader Hit for " + map11.leader_DMG + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
                     return;
                 case 2:               //down
                     if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "G")
@@ -969,6 +1017,11 @@ namespace GADE_POE_task_1
                     {
                         map11.hero_HP -= map11.mage_DMG;
                         attack_richTextBox.Text = ("Mage Hit for 5 " + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                    if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "L")
+                    {
+                        map11.hero_HP -= map11.leader_DMG;
+                        attack_richTextBox.Text = ("Leader Hit for " + map11.leader_DMG + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     return;
                 case 3:               //left
@@ -982,6 +1035,11 @@ namespace GADE_POE_task_1
                         map11.hero_HP -= map11.mage_DMG;
                         attack_richTextBox.Text = ("Mage Hit for 5 " + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
+                    if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "L")
+                    {
+                        map11.hero_HP -= map11.leader_DMG;
+                        attack_richTextBox.Text = ("Leader Hit for " + map11.leader_DMG + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
                     return;
                 case 4:               //right
                     if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "G")
@@ -994,12 +1052,22 @@ namespace GADE_POE_task_1
                         map11.hero_HP -= map11.mage_DMG;
                         attack_richTextBox.Text = ("Mage Hit for 5 " + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
+                    if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "L")
+                    {
+                        map11.hero_HP -= map11.leader_DMG;
+                        attack_richTextBox.Text = ("Leader Hit for " + map11.leader_DMG + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
                     return;
                 case 5:               //top left
                     if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y - 1] == "M")
                     {
                         map11.hero_HP -= map11.mage_DMG;
                         attack_richTextBox.Text = ("Mage Hit for 5 " + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                    if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y - 1] == "L")
+                    {
+                        map11.hero_HP -= map11.leader_DMG;
+                        attack_richTextBox.Text = ("Leader Hit for " + map11.leader_DMG + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     return;
                 case 6:               //top right
@@ -1008,6 +1076,11 @@ namespace GADE_POE_task_1
                         map11.hero_HP -= map11.mage_DMG;
                         attack_richTextBox.Text = ("Mage Hit for 5 " + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
+                    if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y + 1] == "L")
+                    {
+                        map11.hero_HP -= map11.leader_DMG;
+                        attack_richTextBox.Text = ("Leader Hit for " + map11.leader_DMG + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
                     return;
                 case 7:               //bottom left
                     if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y - 1] == "M")
@@ -1015,12 +1088,22 @@ namespace GADE_POE_task_1
                         map11.hero_HP -= map11.mage_DMG;
                         attack_richTextBox.Text = ("Mage Hit for 5 " + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
+                    if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y - 1] == "L")
+                    {
+                        map11.hero_HP -= map11.leader_DMG;
+                        attack_richTextBox.Text = ("Leader Hit for " + map11.leader_DMG + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
                     return;
                 case 8:               //bottom right
                     if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y + 1] == "M")
                     {
                         map11.hero_HP -= map11.mage_DMG;
                         attack_richTextBox.Text = ("Mage Hit for 5 " + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                    if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y + 1] == "L")
+                    {
+                        map11.hero_HP -= map11.leader_DMG;
+                        attack_richTextBox.Text = ("Leader Hit for " + map11.leader_DMG + '\n' + "Hero HP: " + map11.hero_HP + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                     return;
             }
@@ -1144,7 +1227,7 @@ namespace GADE_POE_task_1
 
         private void equip_weapon_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //chosenweapon
+            weapon_Stats_Update();
         }
     }
     //Question 2.1
@@ -1355,7 +1438,7 @@ namespace GADE_POE_task_1
         public int[] leaders_Coords_X = new int[2];                          //leaders
         public int[] leaders_Coords_Y = new int[2];
         public int[] leader_Health = new int[2];
-        public int l_Damage = 2;
+        public int leader_DMG = 2;
 
         public int[] weapons_Drop_Coords_X = new int[3];                          //Weapons
         public int[] weapons_Drop_Coords_Y = new int[3];

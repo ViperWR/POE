@@ -76,6 +76,25 @@ Weapon Cost
     Dagger :        3 Gold
     Longsword : 5 Gold
     Rifle :             7 Gold
-    Longbow :    6 Gold</value>
+    Longbow :    6 Gold
+
+Dagger
+    DMG :            3
+    Durability :    10
+
+Longsword
+    DMG :             4
+    Durability :     6
+
+Rifle
+    DMG :             5
+    Durability :     3
+    Range :           3
+
+Longbow
+    DMG :             4
+    Durability :     6
+    Range :           2
+</value>
   </data>
 </root>

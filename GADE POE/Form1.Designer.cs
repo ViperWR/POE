@@ -378,7 +378,7 @@ namespace GADE_POE_task_1
             this.groupBoxInfo.Controls.Add(this.richTextBoxInfo);
             this.groupBoxInfo.Location = new System.Drawing.Point(990, 12);
             this.groupBoxInfo.Name = "groupBoxInfo";
-            this.groupBoxInfo.Size = new System.Drawing.Size(177, 290);
+            this.groupBoxInfo.Size = new System.Drawing.Size(177, 489);
             this.groupBoxInfo.TabIndex = 19;
             this.groupBoxInfo.TabStop = false;
             this.groupBoxInfo.Text = "Info";
@@ -387,7 +387,7 @@ namespace GADE_POE_task_1
             // 
             this.richTextBoxInfo.Location = new System.Drawing.Point(6, 23);
             this.richTextBoxInfo.Name = "richTextBoxInfo";
-            this.richTextBoxInfo.Size = new System.Drawing.Size(164, 258);
+            this.richTextBoxInfo.Size = new System.Drawing.Size(164, 459);
             this.richTextBoxInfo.TabIndex = 1;
             this.richTextBoxInfo.Text = resources.GetString("richTextBoxInfo.Text");
             // 
