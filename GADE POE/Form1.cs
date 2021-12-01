@@ -1234,26 +1234,29 @@ namespace GADE_POE_task_1
     public class Item
     {
         //dagger
-        int dagger_Durability = 10;
-        int dagger_DMG = 3;
-        int dagger_Cost = 3;
+        public int dagger_Durability = 10;
+        public int dagger_DMG = 3;
+        public int dagger_Cost = 3;
 
         //longsword
-        int longsword_Durability = 6;
-        int longsword_DMG = 4;
-        int longsword_Cost = 5;
+        public int longsword_Durability = 6;
+        public int longsword_DMG = 4;
+        public int longsword_Cost = 5;
 
         //rifle
-        int rifle_Durability = 3;
-        int rifle_Range = 3;
-        int rifle_DMG = 5;
-        int rifle_Cost = 7;
+        public int rifle_Durability = 3;
+        public int rifle_Range = 3;
+        public int rifle_DMG = 5;
+        public int rifle_Cost = 7;
 
         //longbow
-        int longbow_Durability = 4;
-        int longbow_Range = 2;
-        int longbow_DMG = 4;
-        int longbow_Cost = 6;
+        public int longbow_Durability = 4;
+        public int longbow_Range = 2;
+        public int longbow_DMG = 4;
+        public int longbow_Cost = 6;
+
+
+
     }
     public class Gold : Item
     {
@@ -1296,33 +1299,72 @@ namespace GADE_POE_task_1
     }
     public class Shop
     {
-        int[] Weapons = new int[3];
+        Item item11 = new Item();
+        //shop
+        int[] shop_Weapons_I = new int[3];
+        string[] shop_Weapons_S = new string[3];
 
+        int[] shop_Weapons_Cost = new int[3];
+        int[] shop_Weapons_DMG = new int[3];
+        int[] shop_Weapons_Range = new int[3];
+        int[] shop_Weapons_Durability = new int[3];
+
+        int[] Weapons = new int[3];
+        
         public Shop()
         {
 
         }
         public void RandomWeapon()
         {
+            Item item11 = new Item();
+
             Random ran_D = new Random();                  //randomizes one of the 4 weapons
             int ran_Weapon;
 
-            ran_Weapon = ran_D.Next(1, 5);
-            switch (ran_Weapon) 
-            { 
-                case 1:                       //dagger
+            for(int i = 0; i < 3; i++)
+            {
+                ran_Weapon = ran_D.Next(1, 5);
+                switch (ran_Weapon)
+                {
+                    case 1:                       //dagger
+                        shop_Weapons_I[i] = 1;
+                        shop_Weapons_S[i] = "Dagger";
 
-                    break;
-                case 2:                       //longsword
+                        shop_Weapons_Cost[i] = item11.dagger_Cost;
+                        shop_Weapons_DMG[i] = item11.dagger_DMG;
+                        shop_Weapons_Range[i] = 1;
+                        shop_Weapons_Durability[i] = item11.dagger_Durability;
+                        break;
+                    case 2:                       //longsword
+                        shop_Weapons_I[i] = 2;
+                        shop_Weapons_S[i] = "Longsword";
 
-                    break;
-                case 3:                       //rifle
+                        shop_Weapons_Cost[i] = item11.longsword_Cost;
+                        shop_Weapons_DMG[i] = item11.longsword_DMG;
+                        shop_Weapons_Range[i] = 1;
+                        shop_Weapons_Durability[i] = item11.longsword_Durability;
+                        break;
+                    case 3:                       //rifle
+                        shop_Weapons_I[i] = 3;
+                        shop_Weapons_S[i] = "Rifle";
 
-                    break;
-                case 4:                       //longbow
+                        shop_Weapons_Cost[i] = item11.rifle_Cost;
+                        shop_Weapons_DMG[i] = item11.rifle_DMG;
+                        shop_Weapons_Range[i] = item11.rifle_Range;
+                        shop_Weapons_Durability[i] = item11.rifle_Durability;
+                        break;
+                    case 4:                       //longbow
+                        shop_Weapons_I[i] = 4;
+                        shop_Weapons_S[i] = "Longbow";
 
-                    break;
-            }
+                        shop_Weapons_Cost[i] = item11.longbow_Cost;
+                        shop_Weapons_DMG[i] = item11.longbow_DMG;
+                        shop_Weapons_Range[i] = item11.longbow_Range;
+                        shop_Weapons_Durability[i] = item11.longbow_Durability;
+                        break;
+                }
+            }          
         }
         
         public void CanBuy()
