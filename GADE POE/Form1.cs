@@ -145,7 +145,7 @@ namespace GADE_POE_task_1
                         if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == " ")
                         {
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
-                            map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
+                            map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";                         
                             map11.hero_Coords_X += 1;
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "C")
@@ -896,6 +896,19 @@ namespace GADE_POE_task_1
                 
             }
         }
+        public abstract class Leader : Enemy
+        {
+            protected int leader_HP = 20;
+            protected int leader_Damage = 2;
+            public Leader(int x, int y)
+            {
+
+            }
+            public static void ReturnMove()
+            {
+
+            }
+        }
     }
     abstract class Hero : Character
     {
@@ -1220,10 +1233,107 @@ namespace GADE_POE_task_1
     }
     public class Item
     {
+        //dagger
+        int dagger_Durability = 10;
+        int dagger_DMG = 3;
+        int dagger_Cost = 3;
 
+        //longsword
+        int longsword_Durability = 6;
+        int longsword_DMG = 4;
+        int longsword_Cost = 5;
+
+        //rifle
+        int rifle_Durability = 3;
+        int rifle_Range = 3;
+        int rifle_DMG = 5;
+        int rifle_Cost = 7;
+
+        //longbow
+        int longbow_Durability = 4;
+        int longbow_Range = 2;
+        int longbow_DMG = 4;
+        int longbow_Cost = 6;
     }
     public class Gold : Item
     {
         int p_Gold;
+    }
+    abstract class weopan : Item           //q2.2
+    {
+        int damage;
+        int range;
+        int durability;
+        int cost;
+        int weapon_Type;
+        
+        public class MeleeWeapon
+        {
+            public enum Types
+            {
+                Dagger,
+                Longsword,
+            }
+
+            public MeleeWeapon(int dagger, int longsword)
+            {
+
+            }
+        }
+
+        public class RangedWeapon
+        {
+            public enum Types
+            {
+                Rifle,
+                Longbow,
+            }
+            public RangedWeapon(int rifle, int longbow)
+            {
+
+            }
+        }
+    }
+    public class Shop
+    {
+        int[] Weapons = new int[3];
+
+        public Shop()
+        {
+
+        }
+        public void RandomWeapon()
+        {
+            Random ran_D = new Random();                  //randomizes one of the 4 weapons
+            int ran_Weapon;
+
+            ran_Weapon = ran_D.Next(1, 5);
+            switch (ran_Weapon) 
+            { 
+                case 1:                       //dagger
+
+                    break;
+                case 2:                       //longsword
+
+                    break;
+                case 3:                       //rifle
+
+                    break;
+                case 4:                       //longbow
+
+                    break;
+            }
+        }
+        
+        public void CanBuy()
+        {
+
+        }
+        public void Buy()
+        {
+
+
+            RandomWeapon();
+        }
     }
 }
