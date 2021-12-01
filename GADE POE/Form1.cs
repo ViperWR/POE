@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace GADE_POE_task_1
 {
@@ -88,7 +80,7 @@ namespace GADE_POE_task_1
                         move_Enemies();
                         if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == " ")
                         {
-                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " "; //sss
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
                         }
