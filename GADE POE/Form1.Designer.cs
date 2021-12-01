@@ -30,6 +30,7 @@ namespace GADE_POE_task_1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MapLabel = new System.Windows.Forms.Label();
             this.buttonUP1 = new System.Windows.Forms.Button();
@@ -53,11 +54,22 @@ namespace GADE_POE_task_1
             this.richTextBoxWeaponStats = new System.Windows.Forms.RichTextBox();
             this.groupBoxInventory = new System.Windows.Forms.GroupBox();
             this.richTextBoxInventory = new System.Windows.Forms.RichTextBox();
+            this.groupBoxShop = new System.Windows.Forms.GroupBox();
+            this.groupBoxShopInv = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.labelBuy = new System.Windows.Forms.Label();
+            this.comboBoxShopItems = new System.Windows.Forms.ComboBox();
+            this.buttonBuy = new System.Windows.Forms.Button();
+            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
+            this.richTextBoxInfo = new System.Windows.Forms.RichTextBox();
             this.groupBoxAttacking.SuspendLayout();
             this.groupBox_Player_Stats.SuspendLayout();
             this.groupBoxWeapon.SuspendLayout();
             this.groupBoxWeaponStats.SuspendLayout();
             this.groupBoxInventory.SuspendLayout();
+            this.groupBoxShop.SuspendLayout();
+            this.groupBoxShopInv.SuspendLayout();
+            this.groupBoxInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // MapLabel
@@ -65,7 +77,7 @@ namespace GADE_POE_task_1
             this.MapLabel.AccessibleName = "MapLabel";
             this.MapLabel.AutoSize = true;
             this.MapLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MapLabel.Location = new System.Drawing.Point(27, 39);
+            this.MapLabel.Location = new System.Drawing.Point(123, 35);
             this.MapLabel.Name = "MapLabel";
             this.MapLabel.Size = new System.Drawing.Size(38, 18);
             this.MapLabel.TabIndex = 0;
@@ -74,7 +86,7 @@ namespace GADE_POE_task_1
             // 
             // buttonUP1
             // 
-            this.buttonUP1.Location = new System.Drawing.Point(640, 398);
+            this.buttonUP1.Location = new System.Drawing.Point(290, 412);
             this.buttonUP1.Name = "buttonUP1";
             this.buttonUP1.Size = new System.Drawing.Size(40, 23);
             this.buttonUP1.TabIndex = 2;
@@ -84,7 +96,7 @@ namespace GADE_POE_task_1
             // 
             // buttonRIGHT1
             // 
-            this.buttonRIGHT1.Location = new System.Drawing.Point(693, 425);
+            this.buttonRIGHT1.Location = new System.Drawing.Point(343, 439);
             this.buttonRIGHT1.Name = "buttonRIGHT1";
             this.buttonRIGHT1.Size = new System.Drawing.Size(40, 23);
             this.buttonRIGHT1.TabIndex = 3;
@@ -94,7 +106,7 @@ namespace GADE_POE_task_1
             // 
             // buttonLEFT1
             // 
-            this.buttonLEFT1.Location = new System.Drawing.Point(585, 425);
+            this.buttonLEFT1.Location = new System.Drawing.Point(235, 439);
             this.buttonLEFT1.Name = "buttonLEFT1";
             this.buttonLEFT1.Size = new System.Drawing.Size(40, 23);
             this.buttonLEFT1.TabIndex = 4;
@@ -104,7 +116,7 @@ namespace GADE_POE_task_1
             // 
             // buttonDown1
             // 
-            this.buttonDown1.Location = new System.Drawing.Point(640, 457);
+            this.buttonDown1.Location = new System.Drawing.Point(290, 471);
             this.buttonDown1.Name = "buttonDown1";
             this.buttonDown1.Size = new System.Drawing.Size(40, 23);
             this.buttonDown1.TabIndex = 5;
@@ -117,9 +129,9 @@ namespace GADE_POE_task_1
             this.groupBoxAttacking.Controls.Add(this.richTextBox_Item_Pickup);
             this.groupBoxAttacking.Controls.Add(this.attack_richTextBox);
             this.groupBoxAttacking.Controls.Add(this.button_Attack);
-            this.groupBoxAttacking.Location = new System.Drawing.Point(552, 108);
+            this.groupBoxAttacking.Location = new System.Drawing.Point(461, 117);
             this.groupBoxAttacking.Name = "groupBoxAttacking";
-            this.groupBoxAttacking.Size = new System.Drawing.Size(216, 270);
+            this.groupBoxAttacking.Size = new System.Drawing.Size(216, 371);
             this.groupBoxAttacking.TabIndex = 6;
             this.groupBoxAttacking.TabStop = false;
             this.groupBoxAttacking.Text = "Attacking";
@@ -127,9 +139,9 @@ namespace GADE_POE_task_1
             // 
             // richTextBox_Item_Pickup
             // 
-            this.richTextBox_Item_Pickup.Location = new System.Drawing.Point(6, 205);
+            this.richTextBox_Item_Pickup.Location = new System.Drawing.Point(6, 295);
             this.richTextBox_Item_Pickup.Name = "richTextBox_Item_Pickup";
-            this.richTextBox_Item_Pickup.Size = new System.Drawing.Size(204, 59);
+            this.richTextBox_Item_Pickup.Size = new System.Drawing.Size(204, 70);
             this.richTextBox_Item_Pickup.TabIndex = 2;
             this.richTextBox_Item_Pickup.Text = "";
             // 
@@ -137,15 +149,15 @@ namespace GADE_POE_task_1
             // 
             this.attack_richTextBox.Location = new System.Drawing.Point(6, 22);
             this.attack_richTextBox.Name = "attack_richTextBox";
-            this.attack_richTextBox.Size = new System.Drawing.Size(204, 143);
+            this.attack_richTextBox.Size = new System.Drawing.Size(204, 222);
             this.attack_richTextBox.TabIndex = 1;
             this.attack_richTextBox.Text = "";
             // 
             // button_Attack
             // 
-            this.button_Attack.Location = new System.Drawing.Point(6, 171);
+            this.button_Attack.Location = new System.Drawing.Point(6, 250);
             this.button_Attack.Name = "button_Attack";
-            this.button_Attack.Size = new System.Drawing.Size(204, 28);
+            this.button_Attack.Size = new System.Drawing.Size(204, 39);
             this.button_Attack.TabIndex = 0;
             this.button_Attack.Text = "Attack";
             this.button_Attack.UseVisualStyleBackColor = true;
@@ -154,9 +166,9 @@ namespace GADE_POE_task_1
             // groupBox_Player_Stats
             // 
             this.groupBox_Player_Stats.Controls.Add(this.richTextBox_Player_Stats);
-            this.groupBox_Player_Stats.Location = new System.Drawing.Point(552, 12);
+            this.groupBox_Player_Stats.Location = new System.Drawing.Point(461, 12);
             this.groupBox_Player_Stats.Name = "groupBox_Player_Stats";
-            this.groupBox_Player_Stats.Size = new System.Drawing.Size(216, 98);
+            this.groupBox_Player_Stats.Size = new System.Drawing.Size(216, 105);
             this.groupBox_Player_Stats.TabIndex = 8;
             this.groupBox_Player_Stats.TabStop = false;
             this.groupBox_Player_Stats.Text = "Player Stats";
@@ -165,7 +177,7 @@ namespace GADE_POE_task_1
             // 
             this.richTextBox_Player_Stats.Location = new System.Drawing.Point(6, 22);
             this.richTextBox_Player_Stats.Name = "richTextBox_Player_Stats";
-            this.richTextBox_Player_Stats.Size = new System.Drawing.Size(204, 68);
+            this.richTextBox_Player_Stats.Size = new System.Drawing.Size(204, 76);
             this.richTextBox_Player_Stats.TabIndex = 0;
             this.richTextBox_Player_Stats.Text = "";
             this.richTextBox_Player_Stats.TextChanged += new System.EventHandler(this.richTextBox_Player_Stats_TextChanged);
@@ -240,9 +252,9 @@ namespace GADE_POE_task_1
             this.groupBoxWeapon.Controls.Add(this.groupBoxWeaponStats);
             this.groupBoxWeapon.Controls.Add(this.select_weapon);
             this.groupBoxWeapon.Controls.Add(this.labelWeapon);
-            this.groupBoxWeapon.Location = new System.Drawing.Point(804, 12);
+            this.groupBoxWeapon.Location = new System.Drawing.Point(696, 147);
             this.groupBoxWeapon.Name = "groupBoxWeapon";
-            this.groupBoxWeapon.Size = new System.Drawing.Size(276, 189);
+            this.groupBoxWeapon.Size = new System.Drawing.Size(276, 146);
             this.groupBoxWeapon.TabIndex = 15;
             this.groupBoxWeapon.TabStop = false;
             this.groupBoxWeapon.Text = "Weapon";
@@ -251,7 +263,7 @@ namespace GADE_POE_task_1
             // groupBoxWeaponStats
             // 
             this.groupBoxWeaponStats.Controls.Add(this.richTextBoxWeaponStats);
-            this.groupBoxWeaponStats.Location = new System.Drawing.Point(32, 96);
+            this.groupBoxWeaponStats.Location = new System.Drawing.Point(32, 51);
             this.groupBoxWeaponStats.Name = "groupBoxWeaponStats";
             this.groupBoxWeaponStats.Size = new System.Drawing.Size(223, 85);
             this.groupBoxWeaponStats.TabIndex = 15;
@@ -269,7 +281,7 @@ namespace GADE_POE_task_1
             // groupBoxInventory
             // 
             this.groupBoxInventory.Controls.Add(this.richTextBoxInventory);
-            this.groupBoxInventory.Location = new System.Drawing.Point(804, 216);
+            this.groupBoxInventory.Location = new System.Drawing.Point(696, 12);
             this.groupBoxInventory.Name = "groupBoxInventory";
             this.groupBoxInventory.Size = new System.Drawing.Size(276, 129);
             this.groupBoxInventory.TabIndex = 16;
@@ -284,11 +296,92 @@ namespace GADE_POE_task_1
             this.richTextBoxInventory.TabIndex = 3;
             this.richTextBoxInventory.Text = "Melee :\n\n\nRanged :";
             // 
+            // groupBoxShop
+            // 
+            this.groupBoxShop.Controls.Add(this.groupBoxShopInv);
+            this.groupBoxShop.Controls.Add(this.labelBuy);
+            this.groupBoxShop.Controls.Add(this.comboBoxShopItems);
+            this.groupBoxShop.Location = new System.Drawing.Point(696, 299);
+            this.groupBoxShop.Name = "groupBoxShop";
+            this.groupBoxShop.Size = new System.Drawing.Size(276, 141);
+            this.groupBoxShop.TabIndex = 17;
+            this.groupBoxShop.TabStop = false;
+            this.groupBoxShop.Text = "Shop";
+            // 
+            // groupBoxShopInv
+            // 
+            this.groupBoxShopInv.Controls.Add(this.richTextBox1);
+            this.groupBoxShopInv.Location = new System.Drawing.Point(32, 56);
+            this.groupBoxShopInv.Name = "groupBoxShopInv";
+            this.groupBoxShopInv.Size = new System.Drawing.Size(223, 79);
+            this.groupBoxShopInv.TabIndex = 17;
+            this.groupBoxShopInv.TabStop = false;
+            this.groupBoxShopInv.Text = "Shop Contents";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(6, 22);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(211, 51);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "Item 1\nItem 2\nItem 3";
+            // 
+            // labelBuy
+            // 
+            this.labelBuy.AutoSize = true;
+            this.labelBuy.Location = new System.Drawing.Point(38, 30);
+            this.labelBuy.Name = "labelBuy";
+            this.labelBuy.Size = new System.Drawing.Size(27, 15);
+            this.labelBuy.TabIndex = 16;
+            this.labelBuy.Text = "Buy";
+            // 
+            // comboBoxShopItems
+            // 
+            this.comboBoxShopItems.FormattingEnabled = true;
+            this.comboBoxShopItems.Items.AddRange(new object[] {
+            "Item 1",
+            "Item 2",
+            "Item 3"});
+            this.comboBoxShopItems.Location = new System.Drawing.Point(113, 27);
+            this.comboBoxShopItems.Name = "comboBoxShopItems";
+            this.comboBoxShopItems.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxShopItems.TabIndex = 16;
+            // 
+            // buttonBuy
+            // 
+            this.buttonBuy.Location = new System.Drawing.Point(696, 455);
+            this.buttonBuy.Name = "buttonBuy";
+            this.buttonBuy.Size = new System.Drawing.Size(276, 33);
+            this.buttonBuy.TabIndex = 18;
+            this.buttonBuy.Text = "Buy";
+            this.buttonBuy.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxInfo
+            // 
+            this.groupBoxInfo.Controls.Add(this.richTextBoxInfo);
+            this.groupBoxInfo.Location = new System.Drawing.Point(990, 12);
+            this.groupBoxInfo.Name = "groupBoxInfo";
+            this.groupBoxInfo.Size = new System.Drawing.Size(177, 428);
+            this.groupBoxInfo.TabIndex = 19;
+            this.groupBoxInfo.TabStop = false;
+            this.groupBoxInfo.Text = "Info";
+            // 
+            // richTextBoxInfo
+            // 
+            this.richTextBoxInfo.Location = new System.Drawing.Point(6, 23);
+            this.richTextBoxInfo.Name = "richTextBoxInfo";
+            this.richTextBoxInfo.Size = new System.Drawing.Size(164, 391);
+            this.richTextBoxInfo.TabIndex = 1;
+            this.richTextBoxInfo.Text = resources.GetString("richTextBoxInfo.Text");
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 513);
+            this.ClientSize = new System.Drawing.Size(1170, 513);
+            this.Controls.Add(this.groupBoxInfo);
+            this.Controls.Add(this.buttonBuy);
+            this.Controls.Add(this.groupBoxShop);
             this.Controls.Add(this.groupBoxInventory);
             this.Controls.Add(this.groupBoxWeapon);
             this.Controls.Add(this.buttonLoad);
@@ -311,6 +404,10 @@ namespace GADE_POE_task_1
             this.groupBoxWeapon.PerformLayout();
             this.groupBoxWeaponStats.ResumeLayout(false);
             this.groupBoxInventory.ResumeLayout(false);
+            this.groupBoxShop.ResumeLayout(false);
+            this.groupBoxShop.PerformLayout();
+            this.groupBoxShopInv.ResumeLayout(false);
+            this.groupBoxInfo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,6 +438,14 @@ namespace GADE_POE_task_1
         private System.Windows.Forms.RichTextBox richTextBoxWeaponStats;
         private System.Windows.Forms.GroupBox groupBoxInventory;
         private System.Windows.Forms.RichTextBox richTextBoxInventory;
+        private System.Windows.Forms.GroupBox groupBoxShop;
+        private System.Windows.Forms.GroupBox groupBoxShopInv;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label labelBuy;
+        private System.Windows.Forms.ComboBox comboBoxShopItems;
+        private System.Windows.Forms.Button buttonBuy;
+        private System.Windows.Forms.GroupBox groupBoxInfo;
+        private System.Windows.Forms.RichTextBox richTextBoxInfo;
     }
 }
 

@@ -60,4 +60,22 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="richTextBoxInfo.Text" xml:space="preserve">
+    <value>Symbols
+    Dagger :           D
+    Longbow :       LB
+    Longsword :    LS
+    Rifle :                R
+    Mage :              M
+    Hero :               H
+    Leader :            L
+    Goblin :            G
+    Gold :               C
+
+Weapon Cost    
+    Dagger :        3 Gold
+    Longsword : 5 Gold
+    Rifle :             7 Gold
+    Longbow :    6 Gold</value>
+  </data>
 </root>

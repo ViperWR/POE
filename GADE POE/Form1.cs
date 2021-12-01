@@ -80,7 +80,7 @@ namespace GADE_POE_task_1
                         move_Enemies();
                         if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == " ")
                         {
-                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " "; //sss
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
                         }
@@ -88,6 +88,34 @@ namespace GADE_POE_task_1
                         {
                             map11.gold += 1;
                             richTextBox_Item_Pickup.Text = "1 Gold coin added" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
+                            map11.hero_Coords_Y -= 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "D")
+                        {
+                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
+                            map11.hero_Coords_Y -= 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "LS")
+                        {
+                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
+                            map11.hero_Coords_Y -= 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "R")
+                        {
+                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
+                            map11.hero_Coords_Y -= 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "LB")
+                        {
+                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
@@ -114,6 +142,34 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
                             map11.hero_Coords_Y += 1;
                         }
+                        else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "D")
+                        {
+                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
+                            map11.hero_Coords_Y += 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "LS")
+                        {
+                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
+                            map11.hero_Coords_Y += 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "R")
+                        {
+                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
+                            map11.hero_Coords_Y += 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "LB")
+                        {
+                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
+                            map11.hero_Coords_Y += 1;
+                        }
                     }
                     directions = 0;
                     return;
@@ -135,6 +191,34 @@ namespace GADE_POE_task_1
                             map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X -= 1;
                         }
+                        else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "D")
+                        {
+                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
+                            map11.hero_Coords_X -= 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "LS")
+                        {
+                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
+                            map11.hero_Coords_X -= 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "R")
+                        {
+                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
+                            map11.hero_Coords_X -= 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "LB")
+                        {
+                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
+                            map11.hero_Coords_X -= 1;
+                        }
                     }
                     directions = 0;
                     return;
@@ -152,6 +236,34 @@ namespace GADE_POE_task_1
                         {
                             map11.gold += 1;
                             richTextBox_Item_Pickup.Text = "1 Gold coin added" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
+                            map11.hero_Coords_X += 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "D")
+                        {
+                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
+                            map11.hero_Coords_X += 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "LS")
+                        {
+                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
+                            map11.hero_Coords_X += 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "R")
+                        {
+                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
+                            map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
+                            map11.hero_Coords_X += 1;
+                        }
+                        else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "LB")
+                        {
+                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X += 1;
@@ -337,28 +449,42 @@ namespace GADE_POE_task_1
                 }
             }
 
+            if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] == "M")
+            {
+                if (mage_List[0] == temp_M)
+                {
+                    enemy = 1;
+                }
+                if (mage_List[1] == temp_M)
+                {
+                    enemy = 2;
+                }
+                if (mage_List[2] == temp_M)
+                {
+                    enemy = 3;
+                }
+                if (mage_List[3] == temp_M)
+                {
+                    enemy = 4;
+                }
+                if (mage_List[4] == temp_M)
+                {
+                    enemy = 5;
+                }
+            }
 
-            if (mage_List[0] == temp_M)
+            if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] == "L")
             {
-                enemy = 1;
+                if (map11.leaders_Coords_X[0] == map11.hero_Coords_X & map11.leaders_Coords_Y[0] == map11.hero_Coords_Y)
+                {
+                    enemy = 1;
+                }
+                if (map11.leaders_Coords_X[1] == map11.hero_Coords_X & map11.leaders_Coords_Y[0] == map11.hero_Coords_Y)
+                {
+                    enemy = 2;
+                }
             }
-            if (mage_List[1] == temp_M)
-            {
-                enemy = 2;
             }
-            if (mage_List[2] == temp_M)
-            {
-                enemy = 3;
-            }
-            if (mage_List[3] == temp_M)
-            {
-                enemy = 4;
-            }
-            if (mage_List[4] == temp_M)
-            {
-                enemy = 5;
-            }
-        }
         private void attack_Enemy()               //method attacks the enemy selected in Select_Enemy() and lets the corrisponding enemy hp go down in the g_Health array
         {          
             if (select_enemy.SelectedIndex == 0)       //up
@@ -390,6 +516,19 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = " ";
                         attack_richTextBox.Text = ("Mage Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                }
+                if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "L")
+                {
+                    if (map11.leader_Health[enemy - 1] > 0)
+                    {
+                        map11.leader_Health[enemy - 1] -= map11.hero_DMG;
+                        attack_richTextBox.Text = ("Leader got Hit for 2 " + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                    if (map11.leader_Health[enemy - 1] <= 0)
+                    {
+                        map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = " ";
+                        attack_richTextBox.Text = ("Leader Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                 }
             }
@@ -425,6 +564,19 @@ namespace GADE_POE_task_1
                         attack_richTextBox.Text = ("Mage Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                 }
+                if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "L")
+                {
+                    if (map11.leader_Health[enemy - 1] > 0)
+                    {
+                        map11.leader_Health[enemy - 1] -= map11.hero_DMG;
+                        attack_richTextBox.Text = ("Leader got Hit for 2 " + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                    if (map11.leader_Health[enemy - 1] <= 0)
+                    {
+                        map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = " ";
+                        attack_richTextBox.Text = ("Leader Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                }
             }
             if (select_enemy.SelectedIndex == 2)      //right
             {
@@ -458,6 +610,19 @@ namespace GADE_POE_task_1
                         attack_richTextBox.Text = ("Mage Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                 }
+                if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "L")
+                {
+                    if (map11.leader_Health[enemy - 1] > 0)
+                    {
+                        map11.leader_Health[enemy - 1] -= map11.hero_DMG;
+                        attack_richTextBox.Text = ("Leader got Hit for 2 " + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                    if (map11.leader_Health[enemy - 1] <= 0)
+                    {
+                        map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = " ";
+                        attack_richTextBox.Text = ("Leader Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                }
             }
             if (select_enemy.SelectedIndex == 3)       //left
             {
@@ -489,6 +654,19 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = " ";
                         attack_richTextBox.Text = ("Mage Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                }
+                if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "L")
+                {
+                    if (map11.leader_Health[enemy - 1] > 0)
+                    {
+                        map11.leader_Health[enemy - 1] -= map11.hero_DMG;
+                        attack_richTextBox.Text = ("Leader got Hit for 2 " + '\n' + "Leader HP: " + map11.leader_Health[enemy - 1] + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                    }
+                    if (map11.leader_Health[enemy - 1] <= 0)
+                    {
+                        map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = " ";
+                        attack_richTextBox.Text = ("Leader Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
                     }
                 }
             }
@@ -976,9 +1154,19 @@ namespace GADE_POE_task_1
 
         public int hero_HP = 100, hero_Max_HP = 100, hero_DMG = 2;
 
+        public int[] leaders_Coords_X = new int[2];                          //leaders
+        public int[] leaders_Coords_Y = new int[2];
+        public int[] leader_Health = new int[2];
+        public int l_Damage = 2;
+
+        public int[] weapons_Drop_Coords_X = new int[3];                          //Weapons
+        public int[] weapons_Drop_Coords_Y = new int[3];
+
         ArrayList list_Goblins = new ArrayList();
         ArrayList list_Mages = new ArrayList();
         ArrayList list_Gold = new ArrayList();
+        ArrayList list_Leaders = new ArrayList();
+        ArrayList list_WeaponDrops = new ArrayList();
 
         //Question 3.2
 
@@ -1101,6 +1289,108 @@ namespace GADE_POE_task_1
                     list_Gold.Add(Convert.ToString(x + "," + y));
                     gold_X[i] = x;
                     gold_Y[i] = y;
+                }
+            }
+
+            //leader
+            for (int i = 0; i < 2; i++)
+            {
+                int x, y;
+
+                Random ran = new Random();
+                x = ran.Next(1, map_Width - 1);
+                y = ran.Next(1, map_Height - 1);
+
+                while (map_Arr[x, y] != " ")
+                {
+                    x = ran.Next(1, map_Width - 1);
+                    y = ran.Next(1, map_Height - 1);
+                }
+
+                if (map_Arr[x, y] == " ")
+                {
+                    map_Arr[x, y] = "L";
+                    leaders_Coords_X[i] = x;
+                    leaders_Coords_Y[i] = y;
+                    leader_Health[i] = 20;
+                    list_Leaders.Add(Convert.ToString(x + "," + y));
+                }
+            }
+
+            //weapons
+            for (int i = 0; i < 3; i++)
+            {
+                Random rand = new Random();
+                int r_Weapon = rand.Next(1, 5);
+
+                int x, y;
+
+                Random ran = new Random();
+                x = ran.Next(1, map_Width - 1);
+                y = ran.Next(1, map_Height - 1);
+
+                switch (r_Weapon)
+                {
+                    case 1:             //dagger
+                        while (map_Arr[x, y] != " ")
+                        {
+                            x = ran.Next(1, map_Width - 1);
+                            y = ran.Next(1, map_Height - 1);
+                        }
+
+                        if (map_Arr[x, y] == " ")
+                        {
+                            map_Arr[x, y] = "D";
+                            weapons_Drop_Coords_X[i] = x;
+                            weapons_Drop_Coords_Y[i] = y;
+                            list_WeaponDrops.Add(Convert.ToString(x + "," + y));
+                        }
+                        break;
+                    case 2:           //longsword
+                        while (map_Arr[x, y] != " ")
+                        {
+                            x = ran.Next(1, map_Width - 1);
+                            y = ran.Next(1, map_Height - 1);
+                        }
+
+                        if (map_Arr[x, y] == " ")
+                        {
+                            map_Arr[x, y] = "LS";
+                            weapons_Drop_Coords_X[i] = x;
+                            weapons_Drop_Coords_Y[i] = y;
+                            list_WeaponDrops.Add(Convert.ToString(x + "," + y));
+                        }
+                        break;
+                    case 3:           //rifle
+                        while (map_Arr[x, y] != " ")
+                        {
+                            x = ran.Next(1, map_Width - 1);
+                            y = ran.Next(1, map_Height - 1);
+                        }
+
+                        if (map_Arr[x, y] == " ")
+                        {
+                            map_Arr[x, y] = "R";
+                            weapons_Drop_Coords_X[i] = x;
+                            weapons_Drop_Coords_Y[i] = y;
+                            list_WeaponDrops.Add(Convert.ToString(x + "," + y));
+                        }
+                        break;
+                    case 4:           //longbow
+                        while (map_Arr[x, y] != " ")
+                        {
+                            x = ran.Next(1, map_Width - 1);
+                            y = ran.Next(1, map_Height - 1);
+                        }
+
+                        if (map_Arr[x, y] == " ")
+                        {
+                            map_Arr[x, y] = "LB";
+                            weapons_Drop_Coords_X[i] = x;
+                            weapons_Drop_Coords_Y[i] = y;
+                            list_WeaponDrops.Add(Convert.ToString(x + "," + y));
+                        }
+                        break;
                 }
             }
 
