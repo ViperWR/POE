@@ -46,8 +46,18 @@ namespace GADE_POE_task_1
             this.labelAttack = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
+            this.select_weapon = new System.Windows.Forms.ComboBox();
+            this.labelWeapon = new System.Windows.Forms.Label();
+            this.groupBoxWeapon = new System.Windows.Forms.GroupBox();
+            this.groupBoxWeaponStats = new System.Windows.Forms.GroupBox();
+            this.richTextBoxWeaponStats = new System.Windows.Forms.RichTextBox();
+            this.groupBoxInventory = new System.Windows.Forms.GroupBox();
+            this.richTextBoxInventory = new System.Windows.Forms.RichTextBox();
             this.groupBoxAttacking.SuspendLayout();
             this.groupBox_Player_Stats.SuspendLayout();
+            this.groupBoxWeapon.SuspendLayout();
+            this.groupBoxWeaponStats.SuspendLayout();
+            this.groupBoxInventory.SuspendLayout();
             this.SuspendLayout();
             // 
             // MapLabel
@@ -64,7 +74,7 @@ namespace GADE_POE_task_1
             // 
             // buttonUP1
             // 
-            this.buttonUP1.Location = new System.Drawing.Point(649, 398);
+            this.buttonUP1.Location = new System.Drawing.Point(640, 398);
             this.buttonUP1.Name = "buttonUP1";
             this.buttonUP1.Size = new System.Drawing.Size(40, 23);
             this.buttonUP1.TabIndex = 2;
@@ -74,7 +84,7 @@ namespace GADE_POE_task_1
             // 
             // buttonRIGHT1
             // 
-            this.buttonRIGHT1.Location = new System.Drawing.Point(702, 425);
+            this.buttonRIGHT1.Location = new System.Drawing.Point(693, 425);
             this.buttonRIGHT1.Name = "buttonRIGHT1";
             this.buttonRIGHT1.Size = new System.Drawing.Size(40, 23);
             this.buttonRIGHT1.TabIndex = 3;
@@ -84,7 +94,7 @@ namespace GADE_POE_task_1
             // 
             // buttonLEFT1
             // 
-            this.buttonLEFT1.Location = new System.Drawing.Point(594, 425);
+            this.buttonLEFT1.Location = new System.Drawing.Point(585, 425);
             this.buttonLEFT1.Name = "buttonLEFT1";
             this.buttonLEFT1.Size = new System.Drawing.Size(40, 23);
             this.buttonLEFT1.TabIndex = 4;
@@ -94,7 +104,7 @@ namespace GADE_POE_task_1
             // 
             // buttonDown1
             // 
-            this.buttonDown1.Location = new System.Drawing.Point(649, 457);
+            this.buttonDown1.Location = new System.Drawing.Point(640, 457);
             this.buttonDown1.Name = "buttonDown1";
             this.buttonDown1.Size = new System.Drawing.Size(40, 23);
             this.buttonDown1.TabIndex = 5;
@@ -203,11 +213,84 @@ namespace GADE_POE_task_1
             this.buttonLoad.UseVisualStyleBackColor = true;
             this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
+            // select_weapon
+            // 
+            this.select_weapon.FormattingEnabled = true;
+            this.select_weapon.Items.AddRange(new object[] {
+            "Dagger",
+            "Longsword",
+            "Rifle",
+            "Longbow"});
+            this.select_weapon.Location = new System.Drawing.Point(113, 22);
+            this.select_weapon.Name = "select_weapon";
+            this.select_weapon.Size = new System.Drawing.Size(121, 23);
+            this.select_weapon.TabIndex = 13;
+            // 
+            // labelWeapon
+            // 
+            this.labelWeapon.AutoSize = true;
+            this.labelWeapon.Location = new System.Drawing.Point(32, 25);
+            this.labelWeapon.Name = "labelWeapon";
+            this.labelWeapon.Size = new System.Drawing.Size(51, 15);
+            this.labelWeapon.TabIndex = 14;
+            this.labelWeapon.Text = "Weapon";
+            // 
+            // groupBoxWeapon
+            // 
+            this.groupBoxWeapon.Controls.Add(this.groupBoxWeaponStats);
+            this.groupBoxWeapon.Controls.Add(this.select_weapon);
+            this.groupBoxWeapon.Controls.Add(this.labelWeapon);
+            this.groupBoxWeapon.Location = new System.Drawing.Point(804, 12);
+            this.groupBoxWeapon.Name = "groupBoxWeapon";
+            this.groupBoxWeapon.Size = new System.Drawing.Size(276, 189);
+            this.groupBoxWeapon.TabIndex = 15;
+            this.groupBoxWeapon.TabStop = false;
+            this.groupBoxWeapon.Text = "Weapon";
+            this.groupBoxWeapon.Enter += new System.EventHandler(this.groupBoxWeapon_Enter);
+            // 
+            // groupBoxWeaponStats
+            // 
+            this.groupBoxWeaponStats.Controls.Add(this.richTextBoxWeaponStats);
+            this.groupBoxWeaponStats.Location = new System.Drawing.Point(32, 96);
+            this.groupBoxWeaponStats.Name = "groupBoxWeaponStats";
+            this.groupBoxWeaponStats.Size = new System.Drawing.Size(223, 85);
+            this.groupBoxWeaponStats.TabIndex = 15;
+            this.groupBoxWeaponStats.TabStop = false;
+            this.groupBoxWeaponStats.Text = "Stats";
+            // 
+            // richTextBoxWeaponStats
+            // 
+            this.richTextBoxWeaponStats.Location = new System.Drawing.Point(6, 22);
+            this.richTextBoxWeaponStats.Name = "richTextBoxWeaponStats";
+            this.richTextBoxWeaponStats.Size = new System.Drawing.Size(211, 57);
+            this.richTextBoxWeaponStats.TabIndex = 1;
+            this.richTextBoxWeaponStats.Text = "Damage : 2\nRange : 1\nDurability : ∞";
+            // 
+            // groupBoxInventory
+            // 
+            this.groupBoxInventory.Controls.Add(this.richTextBoxInventory);
+            this.groupBoxInventory.Location = new System.Drawing.Point(804, 216);
+            this.groupBoxInventory.Name = "groupBoxInventory";
+            this.groupBoxInventory.Size = new System.Drawing.Size(276, 129);
+            this.groupBoxInventory.TabIndex = 16;
+            this.groupBoxInventory.TabStop = false;
+            this.groupBoxInventory.Text = "Inventory";
+            // 
+            // richTextBoxInventory
+            // 
+            this.richTextBoxInventory.Location = new System.Drawing.Point(6, 22);
+            this.richTextBoxInventory.Name = "richTextBoxInventory";
+            this.richTextBoxInventory.Size = new System.Drawing.Size(264, 101);
+            this.richTextBoxInventory.TabIndex = 3;
+            this.richTextBoxInventory.Text = "Melee :\n\n\nRanged :";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 513);
+            this.ClientSize = new System.Drawing.Size(1106, 513);
+            this.Controls.Add(this.groupBoxInventory);
+            this.Controls.Add(this.groupBoxWeapon);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelAttack);
@@ -224,6 +307,10 @@ namespace GADE_POE_task_1
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxAttacking.ResumeLayout(false);
             this.groupBox_Player_Stats.ResumeLayout(false);
+            this.groupBoxWeapon.ResumeLayout(false);
+            this.groupBoxWeapon.PerformLayout();
+            this.groupBoxWeaponStats.ResumeLayout(false);
+            this.groupBoxInventory.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,6 +334,13 @@ namespace GADE_POE_task_1
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonLoad;
         public System.Windows.Forms.Label MapLabel;
+        private System.Windows.Forms.ComboBox select_weapon;
+        private System.Windows.Forms.Label labelWeapon;
+        private System.Windows.Forms.GroupBox groupBoxWeapon;
+        private System.Windows.Forms.GroupBox groupBoxWeaponStats;
+        private System.Windows.Forms.RichTextBox richTextBoxWeaponStats;
+        private System.Windows.Forms.GroupBox groupBoxInventory;
+        private System.Windows.Forms.RichTextBox richTextBoxInventory;
     }
 }
 

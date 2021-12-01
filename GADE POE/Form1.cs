@@ -765,6 +765,11 @@ namespace GADE_POE_task_1
             update_Map();
             update_P_Stats();
         }
+
+        private void groupBoxWeapon_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
     //Question 2.1
     public abstract class Tile
