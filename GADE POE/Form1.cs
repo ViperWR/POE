@@ -13,6 +13,7 @@ namespace GADE_POE_task_1
         int directions_A = 0;
         int enemy = 0;
         int inv = 1;
+        public int shop_Item;
 
         List<String> goblins_List = new List<string>();
         List<String> mage_List = new List<string>();
@@ -56,7 +57,6 @@ namespace GADE_POE_task_1
             richTextBoxShop.Text = "";
             for (int i = 0; i < 3; i++)
             {
-                richTextBoxShop.Text += shop11.shop_Weapons_S[i] + "\n";
                 comboBoxShopItems.Items[i] = shop11.shop_Weapons_S[i];
             }
 
@@ -65,6 +65,7 @@ namespace GADE_POE_task_1
         private void Form1_Load(object sender, EventArgs e) //When buying an item in the shop this is what controls the dropdown list and it also check if you have enough gold to buy an item 
         {
             Shop shop11 = new Shop(); //This is the class that controls the shops
+            int ppp = 0;
 
             if (comboBoxShopItems.SelectedIndex == 0) //This is the fisrt option in the shop
             {
@@ -206,6 +207,26 @@ namespace GADE_POE_task_1
                         buttonBuy.Enabled = false;
                     }
                 }
+            }
+        }
+        public void shop_History()
+        {
+            Item item11 = new Item();
+
+            switch (shop_Item)
+            {
+                case 1:
+                    richTextBoxShop.Text += "Purchased dagger for " + item11.dagger_Cost + "Gold";
+                    break;
+                case 2:
+                    richTextBoxShop.Text += "Purchased longsword for " + item11.longsword_Cost + "Gold";
+                    break;
+                case 3:
+                    richTextBoxShop.Text += "Purchased rifle for " + item11.rifle_Cost + "Gold";
+                    break;
+                case 4:
+                    richTextBoxShop.Text += "Purchased longbow for " + item11.longbow_Cost + "Gold";
+                    break;
             }
         }
         public void update_Map()          //updates the map and new positions
@@ -1405,6 +1426,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 3;
                         comboBoxShopItems.Items[0] = "Sold";
+                        map11.inventory_Items_Str[0] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1415,6 +1437,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 1;
+
                         fill_Inventory();
                     }
                     else
@@ -1428,6 +1453,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 5;
                         comboBoxShopItems.Items[0] = "Sold";
+                        map11.inventory_Items_Str[0] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1438,6 +1464,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 2;
+
                         fill_Inventory();
                     }
                     else
@@ -1451,6 +1480,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 7;
                         comboBoxShopItems.Items[0] = "Sold";
+                        map11.inventory_Items_Str[0] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1461,6 +1491,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 3;
+
                         fill_Inventory();
                     }
                     else
@@ -1474,6 +1507,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 6;
                         comboBoxShopItems.Items[0] = "Sold";
+                        map11.inventory_Items_Str[0] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1484,6 +1518,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 4;
+
                         fill_Inventory();
                     }
                     else
@@ -1500,6 +1537,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 3;
                         comboBoxShopItems.Items[1] = "Sold";
+                        map11.inventory_Items_Str[1] = "Sold";
                         buttonBuy.Enabled = false;
 
                         equip_weapon.Items[inv] = "Dagger";
@@ -1507,6 +1545,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 1;
+
                         fill_Inventory();
                     }
                     else
@@ -1520,6 +1561,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 5;
                         comboBoxShopItems.Items[1] = "Sold";
+                        map11.inventory_Items_Str[1] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1530,6 +1572,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 2;
+
                         fill_Inventory();
                     }
                     else
@@ -1543,6 +1588,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 7;
                         comboBoxShopItems.Items[1] = "Sold";
+                        map11.inventory_Items_Str[1] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1553,6 +1599,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 3;
+
                         fill_Inventory();
                     }
                     else
@@ -1566,6 +1615,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 6;
                         comboBoxShopItems.Items[1] = "Sold";
+                        map11.inventory_Items_Str[1] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1576,6 +1626,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 4;
+
                         fill_Inventory();
                     }
                     else
@@ -1592,6 +1645,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 3;
                         comboBoxShopItems.Items[2] = "Sold";
+                        map11.inventory_Items_Str[2] = "Sold";
                         buttonBuy.Enabled = false;
 
                         equip_weapon.Items[inv] = "Dagger";
@@ -1599,6 +1653,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 1;
+
                         fill_Inventory();
                     }
                     else
@@ -1612,6 +1669,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 5;
                         comboBoxShopItems.Items[2] = "Sold";
+                        map11.inventory_Items_Str[2] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1622,6 +1680,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 2;
+
                         fill_Inventory();
                     }
                     else
@@ -1635,6 +1696,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 7;
                         comboBoxShopItems.Items[2] = "Sold";
+                        map11.inventory_Items_Str[2] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1645,6 +1707,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 3;
+
                         fill_Inventory();
                     }
                     else
@@ -1658,6 +1723,7 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 6;
                         comboBoxShopItems.Items[2] = "Sold";
+                        map11.inventory_Items_Str[2] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1668,6 +1734,9 @@ namespace GADE_POE_task_1
 
                         richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
                         richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+
+                        shop_Item = 4;
+
                         fill_Inventory();
                     }
                     else
@@ -1677,6 +1746,8 @@ namespace GADE_POE_task_1
                 }
             }
             update_P_Stats();
+            shop_History();
+            shop_Item = 0;
         }
     }
     //Question 2.1

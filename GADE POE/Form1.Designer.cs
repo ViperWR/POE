@@ -56,7 +56,7 @@ namespace GADE_POE_task_1
             this.richTextBoxInventoryRanged = new System.Windows.Forms.RichTextBox();
             this.richTextBoxInventoryMelee = new System.Windows.Forms.RichTextBox();
             this.groupBoxShop = new System.Windows.Forms.GroupBox();
-            this.groupBoxShopInv = new System.Windows.Forms.GroupBox();
+            this.groupBoxShopHistory = new System.Windows.Forms.GroupBox();
             this.richTextBoxShop = new System.Windows.Forms.RichTextBox();
             this.labelBuy = new System.Windows.Forms.Label();
             this.comboBoxShopItems = new System.Windows.Forms.ComboBox();
@@ -69,7 +69,7 @@ namespace GADE_POE_task_1
             this.groupBoxWeaponStats.SuspendLayout();
             this.groupBoxInventory.SuspendLayout();
             this.groupBoxShop.SuspendLayout();
-            this.groupBoxShopInv.SuspendLayout();
+            this.groupBoxShopHistory.SuspendLayout();
             this.groupBoxInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -315,7 +315,7 @@ namespace GADE_POE_task_1
             // 
             // groupBoxShop
             // 
-            this.groupBoxShop.Controls.Add(this.groupBoxShopInv);
+            this.groupBoxShop.Controls.Add(this.groupBoxShopHistory);
             this.groupBoxShop.Controls.Add(this.labelBuy);
             this.groupBoxShop.Controls.Add(this.comboBoxShopItems);
             this.groupBoxShop.Location = new System.Drawing.Point(696, 299);
@@ -325,15 +325,15 @@ namespace GADE_POE_task_1
             this.groupBoxShop.TabStop = false;
             this.groupBoxShop.Text = "Shop";
             // 
-            // groupBoxShopInv
+            // groupBoxShopHistory
             // 
-            this.groupBoxShopInv.Controls.Add(this.richTextBoxShop);
-            this.groupBoxShopInv.Location = new System.Drawing.Point(32, 56);
-            this.groupBoxShopInv.Name = "groupBoxShopInv";
-            this.groupBoxShopInv.Size = new System.Drawing.Size(223, 79);
-            this.groupBoxShopInv.TabIndex = 17;
-            this.groupBoxShopInv.TabStop = false;
-            this.groupBoxShopInv.Text = "Shop Contents";
+            this.groupBoxShopHistory.Controls.Add(this.richTextBoxShop);
+            this.groupBoxShopHistory.Location = new System.Drawing.Point(32, 56);
+            this.groupBoxShopHistory.Name = "groupBoxShopHistory";
+            this.groupBoxShopHistory.Size = new System.Drawing.Size(223, 79);
+            this.groupBoxShopHistory.TabIndex = 17;
+            this.groupBoxShopHistory.TabStop = false;
+            this.groupBoxShopHistory.Text = "Buy History";
             // 
             // richTextBoxShop
             // 
@@ -341,7 +341,7 @@ namespace GADE_POE_task_1
             this.richTextBoxShop.Name = "richTextBoxShop";
             this.richTextBoxShop.Size = new System.Drawing.Size(211, 57);
             this.richTextBoxShop.TabIndex = 2;
-            this.richTextBoxShop.Text = "item\nitem\nitem";
+            this.richTextBoxShop.Text = "";
             // 
             // labelBuy
             // 
@@ -428,7 +428,7 @@ namespace GADE_POE_task_1
             this.groupBoxInventory.ResumeLayout(false);
             this.groupBoxShop.ResumeLayout(false);
             this.groupBoxShop.PerformLayout();
-            this.groupBoxShopInv.ResumeLayout(false);
+            this.groupBoxShopHistory.ResumeLayout(false);
             this.groupBoxInfo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -461,7 +461,7 @@ namespace GADE_POE_task_1
         private System.Windows.Forms.GroupBox groupBoxInventory;
         private System.Windows.Forms.RichTextBox richTextBoxInventoryMelee;
         private System.Windows.Forms.GroupBox groupBoxShop;
-        private System.Windows.Forms.GroupBox groupBoxShopInv;
+        private System.Windows.Forms.GroupBox groupBoxShopHistory;
         private System.Windows.Forms.Label labelBuy;
         private System.Windows.Forms.GroupBox groupBoxInfo;
         private System.Windows.Forms.RichTextBox richTextBoxInfo;
