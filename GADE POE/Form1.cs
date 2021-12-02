@@ -50,6 +50,16 @@ namespace GADE_POE_task_1
                 MapLabel.Text = MapLabel.Text + "\n";
             }
 
+            Shop shop11 = new Shop();
+            shop11.RandomWeapon();
+
+            richTextBoxShop.Text = "";
+            for (int i = 0; i < 3; i++)
+            {
+                richTextBoxShop.Text += shop11.shop_Weapons_S[i] + "\n";
+                comboBoxShopItems.Items[i] = shop11.shop_Weapons_S[i];
+            }
+
             update_P_Stats();
         }      
         private void Form1_Load(object sender, EventArgs e)
@@ -1229,6 +1239,18 @@ namespace GADE_POE_task_1
         {
             weapon_Stats_Update();
         }
+
+        private void richTextBoxInfo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxShopItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Shop shop11 = new Shop();
+
+            shop11.CanBuy();
+        }
     }
     //Question 2.1
     public abstract class Tile
@@ -1430,8 +1452,8 @@ namespace GADE_POE_task_1
         public int mage_DMG = 5;
 
         public int gold;
-        public int[] gold_X = new int[5];
-        public int[] gold_Y = new int[5];
+        public int[] gold_X = new int[12];
+        public int[] gold_Y = new int[12];
 
         public int hero_HP = 100, hero_Max_HP = 100, hero_DMG = 2;
 
@@ -1560,7 +1582,7 @@ namespace GADE_POE_task_1
             }
 
             Random ran_Gold = new Random();
-            int gold_Ammount = ran_Gold.Next(1, 6);
+            int gold_Ammount = ran_Gold.Next(8, 12);
 
             for (int i = 0; i < gold_Ammount; i++)
             {
@@ -1889,15 +1911,18 @@ namespace GADE_POE_task_1
     {
         Item item11 = new Item();
         //shop
-        int[] shop_Weapons_I = new int[3];
-        string[] shop_Weapons_S = new string[3];
+        public int[] shop_Weapons_I = new int[3];
+        public string[] shop_Weapons_S = new string[3];
 
-        int[] shop_Weapons_Cost = new int[3];
-        int[] shop_Weapons_DMG = new int[3];
-        int[] shop_Weapons_Range = new int[3];
-        int[] shop_Weapons_Durability = new int[3];
+        public int[] shop_Weapons_Cost = new int[3];
+        public int[] shop_Weapons_DMG = new int[3];
+        public int[] shop_Weapons_Range = new int[3];
+        public int[] shop_Weapons_Durability = new int[3];
 
-        int[] Weapons = new int[3];
+        public string[] Weapons = new string[6];
+        public int[] weapons_ID = new int[6];
+        public int[] weapons_Dura = new int[6];
+        public int[] weapons_Price = new int[3];
         
         public Shop()
         {
@@ -1923,6 +1948,11 @@ namespace GADE_POE_task_1
                         shop_Weapons_DMG[i] = item11.dagger_DMG;
                         shop_Weapons_Range[i] = 1;
                         shop_Weapons_Durability[i] = item11.dagger_Durability;
+
+                        Weapons[i] = "Dagger";
+                        weapons_ID[i] = i + 1;
+                        weapons_Dura[i] = item11.dagger_Durability;
+                        weapons_Price[i] = 3;
                         break;
                     case 2:                       //longsword
                         shop_Weapons_I[i] = 2;
@@ -1932,6 +1962,11 @@ namespace GADE_POE_task_1
                         shop_Weapons_DMG[i] = item11.longsword_DMG;
                         shop_Weapons_Range[i] = 1;
                         shop_Weapons_Durability[i] = item11.longsword_Durability;
+
+                        Weapons[i] = "Longsword";
+                        weapons_ID[i] = i + 1;
+                        weapons_Dura[i] = item11.longsword_Durability;
+                        weapons_Price[i] = 5;
                         break;
                     case 3:                       //rifle
                         shop_Weapons_I[i] = 3;
@@ -1941,6 +1976,11 @@ namespace GADE_POE_task_1
                         shop_Weapons_DMG[i] = item11.rifle_DMG;
                         shop_Weapons_Range[i] = item11.rifle_Range;
                         shop_Weapons_Durability[i] = item11.rifle_Durability;
+
+                        Weapons[i] = "Rifle";
+                        weapons_ID[i] = i + 1;
+                        weapons_Dura[i] = item11.rifle_Durability;
+                        weapons_Price[i] = 7;
                         break;
                     case 4:                       //longbow
                         shop_Weapons_I[i] = 4;
@@ -1950,20 +1990,64 @@ namespace GADE_POE_task_1
                         shop_Weapons_DMG[i] = item11.longbow_DMG;
                         shop_Weapons_Range[i] = item11.longbow_Range;
                         shop_Weapons_Durability[i] = item11.longbow_Durability;
+
+                        Weapons[i] = "Longbow";
+                        weapons_ID[i] = i + 1;
+                        weapons_Dura[i] = item11.longbow_Durability;
+                        weapons_Price[i] = 6;
                         break;
                 }
-            }          
+            }
         }
         
         public void CanBuy()
         {
+            Form1 form11 = new Form1();
+            map map11 = new map();
 
+            string d = "Dagger", ls = "Longsword", r = "Rifle", lb = "Longbow";
+
+
+            if (form11.comboBoxShopItems.SelectedIndex == 1)
+            {
+                MessageBox.Show("qq");
+                if (form11.comboBoxShopItems.Items[0] == d)
+                {
+                    MessageBox.Show("SS");
+                    if (map11.gold >= 3)
+                    {
+                            form11.buttonBuy.Enabled = true;
+                    }
+                }
+                else if (form11.comboBoxShopItems.Items[0] == ls)
+                {
+                    MessageBox.Show("SS");
+                    if (map11.gold >= 5)
+                    {
+                        form11.buttonBuy.Enabled = true;
+                    }
+                }
+                else if (form11.comboBoxShopItems.Items[0] == r)
+                {
+                    MessageBox.Show("SS");
+                    if (map11.gold >= 7)
+                    {
+                        form11.buttonBuy.Enabled = true;
+                    }
+                }
+                else if (form11.comboBoxShopItems.Items[0] == lb)
+                {
+                    MessageBox.Show("SS");
+                    if (map11.gold >= 6)
+                    {
+                        form11.buttonBuy.Enabled = true;
+                    }
+                }
+            }           
         }
         public void Buy()
         {
 
-
-            RandomWeapon();
         }
     }
 }

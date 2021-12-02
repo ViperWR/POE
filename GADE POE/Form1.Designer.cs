@@ -57,7 +57,7 @@ namespace GADE_POE_task_1
             this.richTextBoxInventoryMelee = new System.Windows.Forms.RichTextBox();
             this.groupBoxShop = new System.Windows.Forms.GroupBox();
             this.groupBoxShopInv = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxShop = new System.Windows.Forms.RichTextBox();
             this.labelBuy = new System.Windows.Forms.Label();
             this.comboBoxShopItems = new System.Windows.Forms.ComboBox();
             this.buttonBuy = new System.Windows.Forms.Button();
@@ -327,7 +327,7 @@ namespace GADE_POE_task_1
             // 
             // groupBoxShopInv
             // 
-            this.groupBoxShopInv.Controls.Add(this.richTextBox1);
+            this.groupBoxShopInv.Controls.Add(this.richTextBoxShop);
             this.groupBoxShopInv.Location = new System.Drawing.Point(32, 56);
             this.groupBoxShopInv.Name = "groupBoxShopInv";
             this.groupBoxShopInv.Size = new System.Drawing.Size(223, 79);
@@ -335,13 +335,13 @@ namespace GADE_POE_task_1
             this.groupBoxShopInv.TabStop = false;
             this.groupBoxShopInv.Text = "Shop Contents";
             // 
-            // richTextBox1
+            // richTextBoxShop
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 22);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(211, 51);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "Item 1\nItem 2\nItem 3";
+            this.richTextBoxShop.Location = new System.Drawing.Point(6, 16);
+            this.richTextBoxShop.Name = "richTextBoxShop";
+            this.richTextBoxShop.Size = new System.Drawing.Size(211, 57);
+            this.richTextBoxShop.TabIndex = 2;
+            this.richTextBoxShop.Text = "item\nitem\nitem";
             // 
             // labelBuy
             // 
@@ -363,9 +363,11 @@ namespace GADE_POE_task_1
             this.comboBoxShopItems.Name = "comboBoxShopItems";
             this.comboBoxShopItems.Size = new System.Drawing.Size(121, 23);
             this.comboBoxShopItems.TabIndex = 16;
+            this.comboBoxShopItems.SelectedIndexChanged += new System.EventHandler(this.comboBoxShopItems_SelectedIndexChanged);
             // 
             // buttonBuy
             // 
+            this.buttonBuy.Enabled = false;
             this.buttonBuy.Location = new System.Drawing.Point(696, 455);
             this.buttonBuy.Name = "buttonBuy";
             this.buttonBuy.Size = new System.Drawing.Size(276, 33);
@@ -457,13 +459,14 @@ namespace GADE_POE_task_1
         private System.Windows.Forms.RichTextBox richTextBoxInventoryMelee;
         private System.Windows.Forms.GroupBox groupBoxShop;
         private System.Windows.Forms.GroupBox groupBoxShopInv;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label labelBuy;
-        private System.Windows.Forms.ComboBox comboBoxShopItems;
-        private System.Windows.Forms.Button buttonBuy;
         private System.Windows.Forms.GroupBox groupBoxInfo;
         private System.Windows.Forms.RichTextBox richTextBoxInfo;
         private System.Windows.Forms.RichTextBox richTextBoxInventoryRanged;
+        private System.Windows.Forms.RichTextBox richTextBoxShopItems;
+        public System.Windows.Forms.RichTextBox richTextBoxShop;
+        public System.Windows.Forms.ComboBox comboBoxShopItems;
+        public System.Windows.Forms.Button buttonBuy;
     }
 }
 
