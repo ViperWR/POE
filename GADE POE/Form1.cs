@@ -62,13 +62,13 @@ namespace GADE_POE_task_1
 
             update_P_Stats();
         }      
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e) //When buying an item in the shop this is what controls the dropdown list and it also check if you have enough gold to buy an item 
         {
-            Shop shop11 = new Shop();
+            Shop shop11 = new Shop(); //This is the class that controls the shops
 
-            if (comboBoxShopItems.SelectedIndex == 0)
+            if (comboBoxShopItems.SelectedIndex == 0) //This is the fisrt option in the shop
             {
-                if (comboBoxShopItems.Items[0] == "Dagger")
+                if (comboBoxShopItems.Items[0] == "Dagger")  //This checks if you can buy the Dagger
                 {
                     if (map11.gold >= 3)
                     {
@@ -79,7 +79,7 @@ namespace GADE_POE_task_1
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[0] == "Longsword")
+                if (comboBoxShopItems.Items[0] == "Longsword") //This checks if you can buy the Longsword
                 {
                     if (map11.gold >= 5)
                     {
@@ -90,7 +90,7 @@ namespace GADE_POE_task_1
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[0] == "Rifle")
+                if (comboBoxShopItems.Items[0] == "Rifle") //This checks if you can buy the Rifle
                 {
                     if (map11.gold >= 7)
                     {
@@ -101,7 +101,7 @@ namespace GADE_POE_task_1
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[0] == "Longbow")
+                if (comboBoxShopItems.Items[0] == "Longbow") //This checks if you can buy the Longbow
                 {
                     if (map11.gold >= 6)
                     {
@@ -113,9 +113,9 @@ namespace GADE_POE_task_1
                     }
                 }
             }
-            if (comboBoxShopItems.SelectedIndex == 1)
+            if (comboBoxShopItems.SelectedIndex == 1) //This is the second option in the shop
             {
-                if (comboBoxShopItems.Items[1] == "Dagger")
+                if (comboBoxShopItems.Items[1] == "Dagger") //This checks if you can buy the Dagger
                 {
                     if (map11.gold >= 3)
                     {
@@ -126,7 +126,7 @@ namespace GADE_POE_task_1
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[1] == "Longsword")
+                if (comboBoxShopItems.Items[1] == "Longsword") //This checks if you can buy the Longsword
                 {
                     if (map11.gold >= 5)
                     {
@@ -137,7 +137,7 @@ namespace GADE_POE_task_1
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[1] == "Rifle")
+                if (comboBoxShopItems.Items[1] == "Rifle") //This checks if you can buy the Rifle
                 {
                     if (map11.gold >= 7)
                     {
@@ -148,7 +148,7 @@ namespace GADE_POE_task_1
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[1] == "Longbow")
+                if (comboBoxShopItems.Items[1] == "Longbow") //This checks if you can buy the Longbow
                 {
                     if (map11.gold >= 6)
                     {
@@ -160,9 +160,9 @@ namespace GADE_POE_task_1
                     }
                 }
             }
-            if (comboBoxShopItems.SelectedIndex == 2)
+            if (comboBoxShopItems.SelectedIndex == 2) //This is the third option in the shop
             {
-                if (comboBoxShopItems.Items[2] == "Dagger")
+                if (comboBoxShopItems.Items[2] == "Dagger") //This checks if you can buy the Dagger
                 {
                     if (map11.gold >= 3)
                     {
@@ -173,7 +173,7 @@ namespace GADE_POE_task_1
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[2] == "Longsword")
+                if (comboBoxShopItems.Items[2] == "Longsword") //This checks if you can buy the Longsword
                 {
                     if (map11.gold >= 5)
                     {
@@ -184,7 +184,7 @@ namespace GADE_POE_task_1
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[2] == "Rifle")
+                if (comboBoxShopItems.Items[2] == "Rifle") //This checks if you can buy the Rifle
                 {
                     if (map11.gold >= 7)
                     {
@@ -195,7 +195,7 @@ namespace GADE_POE_task_1
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[2] == "Longbow")
+                if (comboBoxShopItems.Items[2] == "Longbow") //This checks if you can buy the Longbow
                 {
                     if (map11.gold >= 6)
                     {
@@ -215,7 +215,7 @@ namespace GADE_POE_task_1
             {
                 for (int n = 0; n < map11.map_Height; n++)
                 {
-                    MapLabel.Text = MapLabel.Text + map11.map_Arr[i, n];//ghgg 
+                    MapLabel.Text = MapLabel.Text + map11.map_Arr[i, n]; 
                 }
                 MapLabel.Text = MapLabel.Text + "\n";
             }
@@ -264,7 +264,7 @@ namespace GADE_POE_task_1
         }
         public void update_P_Stats()            //updates player ui stats
         {
-            richTextBox_Player_Stats.Text = "Player Stats:" + "\n HP: " + map11.hero_HP + "/" + map11.hero_Max_HP + "               Gold : " + map11.gold + "\n Damage: " + map11.hero_DMG + "\n [" + map11.hero_Coords_X + "," + map11.hero_Coords_Y + "]";
+            richTextBox_Player_Stats.Text = "Player Stats:" + "\n HP: " + map11.hero_HP + "/" + map11.hero_Max_HP + "               Gold : " + map11.gold + "\n Damage: " + map11.hero_DMG + "\n [" + map11.hero_Coords_X + "," + map11.hero_Coords_Y + "]"; //keeps track on all the player stats
         }
 
         private void moveHero()              //moves hero
@@ -285,14 +285,14 @@ namespace GADE_POE_task_1
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "C")
                         {
                             map11.gold += 1;
-                            richTextBox_Item_Pickup.Text = "1 Gold coin added" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "1 Gold coin added" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show coin has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "D")
                         {
-                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a dagger has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
@@ -310,7 +310,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "LS")
                         {
-                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a longsword has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
@@ -328,7 +328,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "R")
                         {
-                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a rifle has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
@@ -346,7 +346,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "LB")
                         {
-                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a longbow has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = "H";
                             map11.hero_Coords_Y -= 1;
@@ -379,14 +379,14 @@ namespace GADE_POE_task_1
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "C")
                         {
                             map11.gold += 1;
-                            richTextBox_Item_Pickup.Text = "1 Gold coin added" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "1 Gold coin added" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show coin has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
                             map11.hero_Coords_Y += 1;
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "D")
                         {
-                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a dagger has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
                             map11.hero_Coords_Y += 1;
@@ -404,7 +404,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "LS")
                         {
-                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a longsword has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
                             map11.hero_Coords_Y += 1;
@@ -422,7 +422,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "R")
                         {
-                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a rifle has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
                             map11.hero_Coords_Y += 1;
@@ -440,7 +440,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "LB")
                         {
-                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a longbow has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = "H";
                             map11.hero_Coords_Y += 1;
@@ -472,14 +472,14 @@ namespace GADE_POE_task_1
                         else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "C")
                         {
                             map11.gold += 1;
-                            richTextBox_Item_Pickup.Text = "1 Gold coin added" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "1 Gold coin added" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show coin has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X -= 1;
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "D")
                         {
-                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a dagger has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X -= 1;
@@ -497,7 +497,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "LS")
                         {
-                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a longsword has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X -= 1;
@@ -515,7 +515,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "R")
                         {
-                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a rifle has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X -= 1;
@@ -533,7 +533,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "LB")
                         {
-                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a longbow has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X -= 1;
@@ -565,14 +565,14 @@ namespace GADE_POE_task_1
                         else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "C")
                         {
                             map11.gold += 1;
-                            richTextBox_Item_Pickup.Text = "1 Gold coin added" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "1 Gold coin added" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show coin has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X += 1;
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "D")
                         {
-                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Dagger added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a dagger has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X += 1;
@@ -590,7 +590,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "LS")
                         {
-                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Longsword added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a longsword has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X += 1;
@@ -608,7 +608,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "R")
                         {
-                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Rifle added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //shows a rifle has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X += 1;
@@ -626,7 +626,7 @@ namespace GADE_POE_task_1
                         }
                         else if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "LB")
                         {
-                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text;
+                            richTextBox_Item_Pickup.Text = "Longbow added to inventory" + '\n' + "======================" + "\n" + richTextBox_Item_Pickup.Text; //show a longbow has been picked up
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
                             map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = "H";
                             map11.hero_Coords_X += 1;
@@ -779,7 +779,7 @@ namespace GADE_POE_task_1
                 }
             }
         }
-        private void my_Goblin_List()               //creating seperate goblins
+        private void my_Goblin_List()             //creating seperate goblins
         {
             goblins_List.Clear();
             for (int i = 0; i < map11.map_Width; i++)
@@ -806,7 +806,7 @@ namespace GADE_POE_task_1
                 }
             }
         }
-        private void selected_Enemy()                     //checks wich individual enemy is getting attacked
+        private void selected_Enemy()             //checks wich individual enemy is getting attacked
         {
             my_Goblin_List();
             my_Mage_List();
@@ -1102,21 +1102,21 @@ namespace GADE_POE_task_1
             }
             c = 0;
         }
-        private void check_Range()                     //checks if the hero is in range of enemies
+        private void check_Range()        //checks if the hero is in range of enemies
         {
-            if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] != " " & map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] != "X")        //up
+            if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] != " " & map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] != "X")                //up
             {
                 directions_A = 1;
             }
-            if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] != " " & map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] != "X")        //down
+            if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] != " " & map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] != "X")                //down
             {
                 directions_A = 2;
             }
-            if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] != " " & map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] != "X")        //left
+            if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] != " " & map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] != "X")                //left
             {
                 directions_A = 3;
             }
-            if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] != " " & map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] != "X")        //right
+            if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] != " " & map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] != "X")                //right
             {
                 directions_A = 4;
             }
@@ -1139,7 +1139,7 @@ namespace GADE_POE_task_1
             }
 
 
-            switch (directions_A)                          //allows the enemy in range of the player to attack that player
+            switch (directions_A)      //allows the enemy in range of the player to attack that player
             {
                 case 1:                //up
 
@@ -1395,56 +1395,96 @@ namespace GADE_POE_task_1
             shop11.CanBuy();
         }
 
-        private void buttonBuy_Click(object sender, EventArgs e)
+        private void buttonBuy_Click(object sender, EventArgs e) //This controls the buy button and also deactivates when you don't have enough gold to buy the specific item
         {
-            if (comboBoxShopItems.SelectedIndex == 0)
+            if (comboBoxShopItems.SelectedIndex == 0) //This is the fisrt option in the shop
             {
-                if (comboBoxShopItems.Items[0] == "Dagger")
+                if (comboBoxShopItems.Items[0] == "Dagger") //This is to select the dagger in the shop
                 {
                     if (map11.gold >= 3)
                     {
                         map11.gold -= 3;
                         comboBoxShopItems.Items[0] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        map11.inventory_Items_Int[inv] = 1;
+                        map11.inventory_Items_Str[inv] = "Dagger";
+
+                        equip_weapon.Items[inv] = "Dagger";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[0] == "Longsword")
+                if (comboBoxShopItems.Items[0] == "Longsword") //This is to select the Longsword in the shop
                 {
                     if (map11.gold >= 5)
                     {
                         map11.gold -= 5;
                         comboBoxShopItems.Items[0] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        map11.inventory_Items_Int[inv] = 1;
+                        map11.inventory_Items_Str[inv] = "Longsword";
+
+                        equip_weapon.Items[inv] = "Longsword";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[0] == "Rifle")
+                if (comboBoxShopItems.Items[0] == "Rifle") //This is to select the Rifle in the shop
                 {
                     if (map11.gold >= 7)
                     {
                         map11.gold -= 7;
                         comboBoxShopItems.Items[0] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        map11.inventory_Items_Int[inv] = 1;
+                        map11.inventory_Items_Str[inv] = "Rifle";
+
+                        equip_weapon.Items[inv] = "Rifle";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[0] == "Longbow")
+                if (comboBoxShopItems.Items[0] == "Longbow") //This is to select the Longbow in the shop
                 {
                     if (map11.gold >= 6)
                     {
                         map11.gold -= 6;
                         comboBoxShopItems.Items[0] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        map11.inventory_Items_Int[inv] = 1;
+                        map11.inventory_Items_Str[inv] = "Longbow";
+
+                        equip_weapon.Items[inv] = "Longbow";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
@@ -1452,54 +1492,91 @@ namespace GADE_POE_task_1
                     }
                 }
             }
-            if (comboBoxShopItems.SelectedIndex == 1)
+            if (comboBoxShopItems.SelectedIndex == 1) //This is second option in the shop
             {
-                if (comboBoxShopItems.Items[1] == "Dagger")
+                if (comboBoxShopItems.Items[1] == "Dagger") //This is to select the dagger in the shop
                 {
                     if (map11.gold >= 3)
                     {
                         map11.gold -= 3;
-                        comboBoxShopItems.Items[0] = "Sold";
+                        comboBoxShopItems.Items[1] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        equip_weapon.Items[inv] = "Dagger";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[1] == "Longsword")
+                if (comboBoxShopItems.Items[1] == "Longsword") //This is to select the Longsword in the shop
                 {
                     if (map11.gold >= 5)
                     {
                         map11.gold -= 5;
-                        comboBoxShopItems.Items[0] = "Sold";
+                        comboBoxShopItems.Items[1] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        map11.inventory_Items_Int[inv] = 1;
+                        map11.inventory_Items_Str[inv] = "Longsword";
+
+                        equip_weapon.Items[inv] = "Longsword";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[1] == "Rifle")
+                if (comboBoxShopItems.Items[1] == "Rifle") //This is to select the Rifle in the shop
                 {
                     if (map11.gold >= 7)
                     {
                         map11.gold -= 7;
-                        comboBoxShopItems.Items[0] = "Sold";
+                        comboBoxShopItems.Items[1] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        map11.inventory_Items_Int[inv] = 1;
+                        map11.inventory_Items_Str[inv] = "Rifle";
+
+                        equip_weapon.Items[inv] = "Rifle";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[1] == "Longbow")
+                if (comboBoxShopItems.Items[1] == "Longbow") //This is to select the Longbow in the shop
                 {
                     if (map11.gold >= 6)
                     {
                         map11.gold -= 6;
-                        comboBoxShopItems.Items[0] = "Sold";
+                        comboBoxShopItems.Items[1] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        map11.inventory_Items_Int[inv] = 1;
+                        map11.inventory_Items_Str[inv] = "Longbow";
+
+                        equip_weapon.Items[inv] = "Longbow";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
@@ -1507,54 +1584,91 @@ namespace GADE_POE_task_1
                     }
                 }
             }
-            if (comboBoxShopItems.SelectedIndex == 2)
+            if (comboBoxShopItems.SelectedIndex == 2) //This is the third option in the shop
             {
-                if (comboBoxShopItems.Items[2] == "Dagger")
+                if (comboBoxShopItems.Items[2] == "Dagger") //This is to select the Dagger in the shop
                 {
                     if (map11.gold >= 3)
                     {
                         map11.gold -= 3;
-                        comboBoxShopItems.Items[0] = "Sold";
+                        comboBoxShopItems.Items[2] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        equip_weapon.Items[inv] = "Dagger";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[2] == "Longsword")
+                if (comboBoxShopItems.Items[2] == "Longsword") //This is to select the Longsword in the shop
                 {
                     if (map11.gold >= 5)
                     {
                         map11.gold -= 5;
-                        comboBoxShopItems.Items[0] = "Sold";
+                        comboBoxShopItems.Items[2] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        map11.inventory_Items_Int[inv] = 1;
+                        map11.inventory_Items_Str[inv] = "Longsword";
+
+                        equip_weapon.Items[inv] = "Longsword";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[2] == "Rifle")
+                if (comboBoxShopItems.Items[2] == "Rifle") //This is to select the Rifle in the shop
                 {
                     if (map11.gold >= 7)
                     {
                         map11.gold -= 7;
-                        comboBoxShopItems.Items[0] = "Sold";
+                        comboBoxShopItems.Items[2] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        map11.inventory_Items_Int[inv] = 1;
+                        map11.inventory_Items_Str[inv] = "Rifle";
+
+                        equip_weapon.Items[inv] = "Rifle";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
                         buttonBuy.Enabled = false;
                     }
                 }
-                if (comboBoxShopItems.Items[2] == "Longbow")
+                if (comboBoxShopItems.Items[2] == "Longbow") //This is to select the Longbow in the shop
                 {
                     if (map11.gold >= 6)
                     {
                         map11.gold -= 6;
-                        comboBoxShopItems.Items[0] = "Sold";
+                        comboBoxShopItems.Items[2] = "Sold";
                         buttonBuy.Enabled = false;
+
+                        map11.inventory_Items_Int[inv] = 1;
+                        map11.inventory_Items_Str[inv] = "Longbow";
+
+                        equip_weapon.Items[inv] = "Longbow";
+                        inv += 1;
+
+                        richTextBoxInventoryRanged.Text = "Ranged : " + "\n";
+                        richTextBoxInventoryMelee.Text = "Melee : " + "\n";
+                        fill_Inventory();
                     }
                     else
                     {
@@ -1562,6 +1676,7 @@ namespace GADE_POE_task_1
                     }
                 }
             }
+            update_P_Stats();
         }
     }
     //Question 2.1
@@ -1740,15 +1855,15 @@ namespace GADE_POE_task_1
         public string[,] map_Arr;
 
         public object Hero_Symbol;
-        public int hero_Coords_X;                                      //
-        public int hero_Coords_Y;                                    //
+        public int hero_Coords_X;                                       //Hero
+        public int hero_Coords_Y;                                    
 
         public int prev_hero_Coords_X;                             
         public int prev_hero_Coords_Y;                        
 
         public int[] enemies_Arr;
-        public int[] enemies_Coords_X = new int[5];                  //
-        public int[] enemies_Coords_Y = new int[5];                   //
+        public int[] enemies_Coords_X = new int[5];                     //Enemies
+        public int[] enemies_Coords_Y = new int[5];                   
 
         public int map_Width = 20;
         public int map_Height = 20;
@@ -1756,25 +1871,25 @@ namespace GADE_POE_task_1
         public int[] map_Items = new int[5];
 
         public int[,] g_Position = new int[20, 20];
-        public int[] g_Health = new int[5];                            //
+        public int[] g_Health = new int[5];                             //Goblins
         public int g_Damage = 1;
 
         public int[,] m_Position = new int[20, 20];
-        public int[] m_Health = new int[5];                          //
+        public int[] m_Health = new int[5];                             //Mage
         public int mage_DMG = 5;
 
         public int gold;
-        public int[] gold_X = new int[12];
+        public int[] gold_X = new int[12];                              //Gold
         public int[] gold_Y = new int[12];
 
         public int hero_HP = 100, hero_Max_HP = 100, hero_DMG = 2;
 
-        public int[] leaders_Coords_X = new int[2];                          //leaders
+        public int[] leaders_Coords_X = new int[2];                     //Leaders
         public int[] leaders_Coords_Y = new int[2];
         public int[] leader_Health = new int[2];
         public int leader_DMG = 2;
 
-        public int[] weapons_Drop_Coords_X = new int[3];                          //Weapons
+        public int[] weapons_Drop_Coords_X = new int[3];                //Weapons
         public int[] weapons_Drop_Coords_Y = new int[3];
 
         public int[] inventory_Items_Int = new int[10];
@@ -1836,7 +1951,7 @@ namespace GADE_POE_task_1
         {
             
         }
-        public void Create_Inventory()
+        public void Create_Inventory()  //Creates the inventory
         {
             for (int i = 0; i < 10; i++)
             {
@@ -1894,7 +2009,7 @@ namespace GADE_POE_task_1
             }
 
             Random ran_Gold = new Random();
-            int gold_Ammount = ran_Gold.Next(8, 12);
+            int gold_Ammount = ran_Gold.Next(8, 12);  //Randomizes the amount of gold
 
             for (int i = 0; i < gold_Ammount; i++)
             {
@@ -1958,7 +2073,7 @@ namespace GADE_POE_task_1
 
                 switch (r_Weapon)
                 {
-                    case 1:             //dagger
+                    case 1:                                                      //Dagger
                         while (map_Arr[x, y] != " ")
                         {
                             x = ran.Next(1, map_Width - 1);
@@ -1973,7 +2088,7 @@ namespace GADE_POE_task_1
                             list_WeaponDrops.Add(Convert.ToString(x + "," + y));
                         }
                         break;
-                    case 2:           //longsword
+                    case 2:                                                     //Longsword
                         while (map_Arr[x, y] != " ")
                         {
                             x = ran.Next(1, map_Width - 1);
@@ -1988,7 +2103,7 @@ namespace GADE_POE_task_1
                             list_WeaponDrops.Add(Convert.ToString(x + "," + y));
                         }
                         break;
-                    case 3:           //rifle
+                    case 3:                                                      //Rifle
                         while (map_Arr[x, y] != " ")
                         {
                             x = ran.Next(1, map_Width - 1);
@@ -2003,7 +2118,7 @@ namespace GADE_POE_task_1
                             list_WeaponDrops.Add(Convert.ToString(x + "," + y));
                         }
                         break;
-                    case 4:           //longbow
+                    case 4:                                                     //Longbow
                         while (map_Arr[x, y] != " ")
                         {
                             x = ran.Next(1, map_Width - 1);
@@ -2219,10 +2334,10 @@ namespace GADE_POE_task_1
             }
         }
     }
-    public class Shop
+    public class Shop //this class is in charge of everything that is in the shop
     {
         Item item11 = new Item();
-        //shop
+        
         public int[] shop_Weapons_I = new int[3];
         public string[] shop_Weapons_S = new string[3];
 
@@ -2244,7 +2359,7 @@ namespace GADE_POE_task_1
         {
             Item item11 = new Item();
 
-            Random ran_D = new Random();                  //randomizes one of the 4 weapons
+            Random ran_D = new Random();           //randomizes all of the different weapons
             int ran_Weapon;
 
             for(int i = 0; i < 3; i++)
