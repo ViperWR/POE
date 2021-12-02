@@ -64,7 +64,149 @@ namespace GADE_POE_task_1
         }      
         private void Form1_Load(object sender, EventArgs e)
         {
+            Shop shop11 = new Shop();
 
+            if (comboBoxShopItems.SelectedIndex == 0)
+            {
+                if (comboBoxShopItems.Items[0] == "Dagger")
+                {
+                    if (map11.gold >= 3)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[0] == "Longsword")
+                {
+                    if (map11.gold >= 5)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[0] == "Rifle")
+                {
+                    if (map11.gold >= 7)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[0] == "Longbow")
+                {
+                    if (map11.gold >= 6)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+            }
+            if (comboBoxShopItems.SelectedIndex == 1)
+            {
+                if (comboBoxShopItems.Items[1] == "Dagger")
+                {
+                    if (map11.gold >= 3)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[1] == "Longsword")
+                {
+                    if (map11.gold >= 5)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[1] == "Rifle")
+                {
+                    if (map11.gold >= 7)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[1] == "Longbow")
+                {
+                    if (map11.gold >= 6)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+            }
+            if (comboBoxShopItems.SelectedIndex == 2)
+            {
+                if (comboBoxShopItems.Items[2] == "Dagger")
+                {
+                    if (map11.gold >= 3)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[2] == "Longsword")
+                {
+                    if (map11.gold >= 5)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[2] == "Rifle")
+                {
+                    if (map11.gold >= 7)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[2] == "Longbow")
+                {
+                    if (map11.gold >= 6)
+                    {
+                        buttonBuy.Enabled = true;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+            }
         }
         public void update_Map()          //updates the map and new positions
         {
@@ -1246,7 +1388,8 @@ namespace GADE_POE_task_1
         }
 
         private void comboBoxShopItems_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {           
+
             Shop shop11 = new Shop();
 
             shop11.CanBuy();
@@ -1998,56 +2141,16 @@ namespace GADE_POE_task_1
                         break;
                 }
             }
+
         }
-        
         public void CanBuy()
         {
-            Form1 form11 = new Form1();
-            map map11 = new map();
-
-            string d = "Dagger", ls = "Longsword", r = "Rifle", lb = "Longbow";
-
-
-            if (form11.comboBoxShopItems.SelectedIndex == 1)
-            {
-                MessageBox.Show("qq");
-                if (form11.comboBoxShopItems.Items[0] == d)
-                {
-                    MessageBox.Show("SS");
-                    if (map11.gold >= 3)
-                    {
-                            form11.buttonBuy.Enabled = true;
-                    }
-                }
-                else if (form11.comboBoxShopItems.Items[0] == ls)
-                {
-                    MessageBox.Show("SS");
-                    if (map11.gold >= 5)
-                    {
-                        form11.buttonBuy.Enabled = true;
-                    }
-                }
-                else if (form11.comboBoxShopItems.Items[0] == r)
-                {
-                    MessageBox.Show("SS");
-                    if (map11.gold >= 7)
-                    {
-                        form11.buttonBuy.Enabled = true;
-                    }
-                }
-                else if (form11.comboBoxShopItems.Items[0] == lb)
-                {
-                    MessageBox.Show("SS");
-                    if (map11.gold >= 6)
-                    {
-                        form11.buttonBuy.Enabled = true;
-                    }
-                }
-            }           
+            
         }
         public void Buy()
         {
 
         }
+
     }
 }

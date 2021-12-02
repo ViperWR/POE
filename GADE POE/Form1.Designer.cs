@@ -363,7 +363,8 @@ namespace GADE_POE_task_1
             this.comboBoxShopItems.Name = "comboBoxShopItems";
             this.comboBoxShopItems.Size = new System.Drawing.Size(121, 23);
             this.comboBoxShopItems.TabIndex = 16;
-            this.comboBoxShopItems.SelectedIndexChanged += new System.EventHandler(this.comboBoxShopItems_SelectedIndexChanged);
+            this.comboBoxShopItems.SelectedIndexChanged += new System.EventHandler(this.Form1_Load);
+            this.comboBoxShopItems.TextChanged += new System.EventHandler(this.comboBoxShopItems_SelectedIndexChanged);
             // 
             // buttonBuy
             // 
@@ -374,6 +375,7 @@ namespace GADE_POE_task_1
             this.buttonBuy.TabIndex = 18;
             this.buttonBuy.Text = "Buy";
             this.buttonBuy.UseVisualStyleBackColor = true;
+            this.buttonBuy.TextChanged += new System.EventHandler(this.comboBoxShopItems_SelectedIndexChanged);
             // 
             // groupBoxInfo
             // 
