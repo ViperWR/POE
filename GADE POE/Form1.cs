@@ -65,7 +65,6 @@ namespace GADE_POE_task_1
         private void Form1_Load(object sender, EventArgs e) //When buying an item in the shop this is what controls the dropdown list and it also check if you have enough gold to buy an item 
         {
             Shop shop11 = new Shop(); //This is the class that controls the shops
-            int ppp = 0;
 
             if (comboBoxShopItems.SelectedIndex == 0) //This is the fisrt option in the shop
             {
@@ -668,7 +667,7 @@ namespace GADE_POE_task_1
                     return;
             }
         }
-        private void fill_Inventory()
+        public void fill_Inventory()
         {
             for (int i = 1; i < inv; i++)
             {
@@ -676,7 +675,7 @@ namespace GADE_POE_task_1
                 {
                     richTextBoxInventoryMelee.Text += map11.inventory_Items_Str[i] + ", ";
                 }
-                if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
+                else if (map11.inventory_Items_Str[i] == "Rifle" || map11.inventory_Items_Str[i] == "Longbow")
                 {
                     richTextBoxInventoryRanged.Text += map11.inventory_Items_Str[i] + ", ";
                 }
@@ -1426,7 +1425,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 3;
                         comboBoxShopItems.Items[0] = "Sold";
-                        map11.inventory_Items_Str[0] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1453,7 +1451,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 5;
                         comboBoxShopItems.Items[0] = "Sold";
-                        map11.inventory_Items_Str[0] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1480,7 +1477,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 7;
                         comboBoxShopItems.Items[0] = "Sold";
-                        map11.inventory_Items_Str[0] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1507,7 +1503,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 6;
                         comboBoxShopItems.Items[0] = "Sold";
-                        map11.inventory_Items_Str[0] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1537,7 +1532,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 3;
                         comboBoxShopItems.Items[1] = "Sold";
-                        map11.inventory_Items_Str[1] = "Sold";
                         buttonBuy.Enabled = false;
 
                         equip_weapon.Items[inv] = "Dagger";
@@ -1561,7 +1555,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 5;
                         comboBoxShopItems.Items[1] = "Sold";
-                        map11.inventory_Items_Str[1] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1588,7 +1581,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 7;
                         comboBoxShopItems.Items[1] = "Sold";
-                        map11.inventory_Items_Str[1] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1615,7 +1607,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 6;
                         comboBoxShopItems.Items[1] = "Sold";
-                        map11.inventory_Items_Str[1] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1645,7 +1636,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 3;
                         comboBoxShopItems.Items[2] = "Sold";
-                        map11.inventory_Items_Str[2] = "Sold";
                         buttonBuy.Enabled = false;
 
                         equip_weapon.Items[inv] = "Dagger";
@@ -1669,7 +1659,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 5;
                         comboBoxShopItems.Items[2] = "Sold";
-                        map11.inventory_Items_Str[2] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1696,7 +1685,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 7;
                         comboBoxShopItems.Items[2] = "Sold";
-                        map11.inventory_Items_Str[2] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -1723,7 +1711,6 @@ namespace GADE_POE_task_1
                     {
                         map11.gold -= 6;
                         comboBoxShopItems.Items[2] = "Sold";
-                        map11.inventory_Items_Str[2] = "Sold";
                         buttonBuy.Enabled = false;
 
                         map11.inventory_Items_Int[inv] = 1;
@@ -2496,7 +2483,6 @@ namespace GADE_POE_task_1
                         break;
                 }
             }
-
         }
         public void CanBuy()
         {
@@ -2506,6 +2492,5 @@ namespace GADE_POE_task_1
         {
 
         }
-
     }
 }
