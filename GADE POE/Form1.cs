@@ -1394,6 +1394,175 @@ namespace GADE_POE_task_1
 
             shop11.CanBuy();
         }
+
+        private void buttonBuy_Click(object sender, EventArgs e)
+        {
+            if (comboBoxShopItems.SelectedIndex == 0)
+            {
+                if (comboBoxShopItems.Items[0] == "Dagger")
+                {
+                    if (map11.gold >= 3)
+                    {
+                        map11.gold -= 3;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[0] == "Longsword")
+                {
+                    if (map11.gold >= 5)
+                    {
+                        map11.gold -= 5;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[0] == "Rifle")
+                {
+                    if (map11.gold >= 7)
+                    {
+                        map11.gold -= 7;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[0] == "Longbow")
+                {
+                    if (map11.gold >= 6)
+                    {
+                        map11.gold -= 6;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+            }
+            if (comboBoxShopItems.SelectedIndex == 1)
+            {
+                if (comboBoxShopItems.Items[1] == "Dagger")
+                {
+                    if (map11.gold >= 3)
+                    {
+                        map11.gold -= 3;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[1] == "Longsword")
+                {
+                    if (map11.gold >= 5)
+                    {
+                        map11.gold -= 5;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[1] == "Rifle")
+                {
+                    if (map11.gold >= 7)
+                    {
+                        map11.gold -= 7;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[1] == "Longbow")
+                {
+                    if (map11.gold >= 6)
+                    {
+                        map11.gold -= 6;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+            }
+            if (comboBoxShopItems.SelectedIndex == 2)
+            {
+                if (comboBoxShopItems.Items[2] == "Dagger")
+                {
+                    if (map11.gold >= 3)
+                    {
+                        map11.gold -= 3;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[2] == "Longsword")
+                {
+                    if (map11.gold >= 5)
+                    {
+                        map11.gold -= 5;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[2] == "Rifle")
+                {
+                    if (map11.gold >= 7)
+                    {
+                        map11.gold -= 7;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+                if (comboBoxShopItems.Items[2] == "Longbow")
+                {
+                    if (map11.gold >= 6)
+                    {
+                        map11.gold -= 6;
+                        comboBoxShopItems.Items[0] = "Sold";
+                        buttonBuy.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonBuy.Enabled = false;
+                    }
+                }
+            }
+        }
     }
     //Question 2.1
     public abstract class Tile

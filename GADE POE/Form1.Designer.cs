@@ -376,6 +376,7 @@ namespace GADE_POE_task_1
             this.buttonBuy.Text = "Buy";
             this.buttonBuy.UseVisualStyleBackColor = true;
             this.buttonBuy.TextChanged += new System.EventHandler(this.comboBoxShopItems_SelectedIndexChanged);
+            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
             // 
             // groupBoxInfo
             // 
