@@ -295,7 +295,8 @@ namespace GADE_POE_task_1
                 case 1:                //left
                     if (map11.hero_Coords_Y > 0)
                     {
-                        move_Enemies();
+                        move_Goblins();
+                        move_Leaders();
                         if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == " ")
                         {
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
@@ -389,7 +390,8 @@ namespace GADE_POE_task_1
                 case 2:                //right
                     if (map11.hero_Coords_Y < map11.map_Height - 1)
                     {
-                        move_Enemies();
+                        move_Goblins();
+                        move_Leaders();
                         if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == " ")
                         {
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
@@ -482,7 +484,8 @@ namespace GADE_POE_task_1
                 case 3:                //up
                     if (map11.hero_Coords_X > 0)
                     {
-                        move_Enemies();
+                        move_Goblins();
+                        move_Leaders();
                         if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == " ")
                         {
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
@@ -575,7 +578,8 @@ namespace GADE_POE_task_1
                 case 4:                //down
                     if (map11.hero_Coords_X < map11.map_Width - 1)
                     {
-                        move_Enemies();
+                        move_Goblins();
+                        move_Leaders();
                         if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == " ")
                         {
                             map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y] = " ";
@@ -681,7 +685,178 @@ namespace GADE_POE_task_1
                 }
             }
         }
-        private void move_Enemies()        //moves enemies when hero moves
+        private void move_Leaders()  //follow hero
+        {
+            for (int i = 0; i < map11.map_Width; i++)
+            {
+                for (int n = 0; n < map11.map_Height; n++)
+                {
+                    if (map11.map_Arr[i, n] == "L")
+                    {
+                        int tempcheck1, tempcheck2;
+                        int bbl = 0;
+
+                        tempcheck1 = map11.leaders_Coords_X[bbl] - map11.hero_Coords_X;
+                        tempcheck2 = map11.leaders_Coords_Y[bbl] - map11.hero_Coords_Y;
+
+                        bbl = 1;
+
+                        if (tempcheck1 >= tempcheck2)
+                        {
+                            if (tempcheck1 > 0)
+                            {
+                                if (map11.map_Arr[i - 1, n] == " ")
+                                {
+                                    map11.map_Arr[i, n] = " ";
+                                    map11.map_Arr[i - 1, n] = "L";
+
+                                    for (int b = 0; b < 2; b++)
+                                    {
+                                        if (map11.leaders_Coords_X[b] == i & map11.leaders_Coords_Y[b] == n)
+                                        {
+                                            map11.leaders_Coords_X[b] -= 1;
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (map11.map_Arr[i + 1, n] == " ")
+                                {
+                                    map11.map_Arr[i, n] = " ";
+                                    map11.map_Arr[i + 1, n] = "L";
+
+                                    for (int b = 0; b < 2; b++)
+                                    {
+                                        if (map11.leaders_Coords_X[b] == i & map11.leaders_Coords_Y[b] == n)
+                                        {
+                                            map11.leaders_Coords_X[b] += 1;
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else if (tempcheck2 > tempcheck1)
+                        {
+                            if (tempcheck2 > 0)
+                            {
+                                if (map11.map_Arr[i, n - 1] == " ")
+                                {
+                                    map11.map_Arr[i, n] = " ";
+                                    map11.map_Arr[i, n - 1] = "L";
+
+                                    for (int b = 0; b < 2; b++)
+                                    {
+                                        if (map11.leaders_Coords_X[b] == i & map11.leaders_Coords_Y[b] == n)
+                                        {
+                                            map11.leaders_Coords_Y[b] -= 1;
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (map11.map_Arr[i, n + 1] == " ")
+                                {
+                                    map11.map_Arr[i, n] = " ";
+                                    map11.map_Arr[i, n + 1] = "L";
+
+                                    for (int b = 0; b < 2; b++)
+                                    {
+                                        if (map11.leaders_Coords_X[b] == i & map11.leaders_Coords_Y[b] == n)
+                                        {
+                                            map11.leaders_Coords_Y[b] += 1;
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        private void random_Direction()
+        {
+            Random randc = new Random();
+            int randnumc;
+            
+            for (int i = 0; i < map11.map_Width; i++)
+            {
+                for (int n = 0; n < map11.map_Height; n++)
+                {
+                    randnumc = randc.Next(1, 5);
+                    switch (randnumc)
+                    {
+                        case 1:
+                            if (map11.map_Arr[i - 1, n] == " ")
+                            {
+                                map11.map_Arr[i, n] = " ";
+                                map11.map_Arr[i - 1, n] = "L";
+
+                                for (int b = 0; b < 2; b++)
+                                {
+                                    if (map11.leaders_Coords_X[b] == i & map11.leaders_Coords_Y[b] == n)
+                                    {
+                                        map11.leaders_Coords_X[b] -= 1;
+                                    }
+                                }
+                            }
+                            break;
+                        case 2:
+                            if (map11.map_Arr[i + 1, n] == " ")
+                            {
+                                map11.map_Arr[i, n] = " ";
+                                map11.map_Arr[i + 1, n] = "L";
+
+                                for (int b = 0; b < 2; b++)
+                                {
+                                    if (map11.leaders_Coords_X[b] == i & map11.leaders_Coords_Y[b] == n)
+                                    {
+                                        map11.leaders_Coords_X[b] += 1;
+                                    }
+                                }
+                            }
+                            break;
+                        case 3:
+                            if (map11.map_Arr[i, n - 1] == " ")
+                            {
+                                map11.map_Arr[i, n] = " ";
+                                map11.map_Arr[i, n - 1] = "L";
+
+                                for (int b = 0; b < 2; b++)
+                                {
+                                    if (map11.leaders_Coords_X[b] == i & map11.leaders_Coords_Y[b] == n)
+                                    {
+                                        map11.leaders_Coords_Y[b] -= 1;
+                                    }
+                                }
+                            }
+                            break;
+                        case 4:
+                            if (map11.map_Arr[i, n + 1] == " ")
+                            {
+                                map11.map_Arr[i, n] = " ";
+                                map11.map_Arr[i, n + 1] = "L";
+
+                                for (int b = 0; b < 2; b++)
+                                {
+                                    if (map11.leaders_Coords_X[b] == i & map11.leaders_Coords_Y[b] == n)
+                                    {
+                                        map11.leaders_Coords_Y[b] += 1;
+                                    }
+                                }
+                            }
+                            break;
+                    }
+                }
+            }
+            
+        }
+        private void move_Goblins()        //moves enemies when hero moves
         {
             Random ran_D = new Random();                  //randomizes the direction of the enemy
             int direction_G;
