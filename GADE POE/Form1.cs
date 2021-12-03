@@ -1086,6 +1086,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = " ";
                         attack_richTextBox.Text = ("Goblin Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 1;
+                        richTextBox_Item_Pickup.Text += 1 + " Gold added to inv";
                     }
                 }
                 if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "M")
@@ -1099,6 +1101,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = " ";
                         attack_richTextBox.Text = ("Mage Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 3;
+                        richTextBox_Item_Pickup.Text += 3 + " Gold added to inv";
                     }
                 }
                 if (map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] == "L")
@@ -1112,6 +1116,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X - 1, map11.hero_Coords_Y] = " ";
                         attack_richTextBox.Text = ("Leader Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 2;
+                        richTextBox_Item_Pickup.Text += 2 + " Gold added to inv";
                     }
                 }
             }
@@ -1132,6 +1138,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = " ";
                         attack_richTextBox.Text = ("Goblin Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 1;
+                        richTextBox_Item_Pickup.Text += 1 + " Gold added to inv";
                     }
                 }
                 if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "M")
@@ -1145,6 +1153,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = " ";
                         attack_richTextBox.Text = ("Mage Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 3;
+                        richTextBox_Item_Pickup.Text += 3 + " Gold added to inv";
                     }
                 }
                 if (map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] == "L")
@@ -1158,6 +1168,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X + 1, map11.hero_Coords_Y] = " ";
                         attack_richTextBox.Text = ("Leader Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 2;
+                        richTextBox_Item_Pickup.Text += 2 + " Gold added to inv";
                     }
                 }
             }
@@ -1178,6 +1190,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = " ";
                         attack_richTextBox.Text = ("Goblin Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 1;
+                        richTextBox_Item_Pickup.Text += 1 + " Gold added to inv";
                     }
                 }
                 if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "M")
@@ -1191,6 +1205,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = " ";
                         attack_richTextBox.Text = ("Mage Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 3;
+                        richTextBox_Item_Pickup.Text += 3 + " Gold added to inv";
                     }
                 }
                 if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] == "L")
@@ -1204,6 +1220,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y + 1] = " ";
                         attack_richTextBox.Text = ("Leader Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 2;
+                        richTextBox_Item_Pickup.Text += 2 + " Gold added to inv";
                     }
                 }
             }
@@ -1224,6 +1242,7 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = " ";
                         attack_richTextBox.Text = ("Goblin Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 1;
                     }
                 }
                 if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "M")
@@ -1237,6 +1256,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = " ";
                         attack_richTextBox.Text = ("Mage Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 3;
+                        richTextBox_Item_Pickup.Text += 3 + " Gold added to inv";
                     }
                 }
                 if (map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] == "L")
@@ -1250,6 +1271,8 @@ namespace GADE_POE_task_1
                     {
                         map11.map_Arr[map11.hero_Coords_X, map11.hero_Coords_Y - 1] = " ";
                         attack_richTextBox.Text = ("Leader Killed" + '\n' + "======================" + '\n' + attack_richTextBox.Text);
+                        map11.gold += 2;
+                        richTextBox_Item_Pickup.Text += 2 + " Gold added to inv";
                     }
                 }
             }
